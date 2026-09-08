@@ -145,6 +145,7 @@ img {
 .brand-title {
   display: flex;
   flex-direction: column;
+  white-space: nowrap;
 }
 
 .brand-name {
@@ -167,12 +168,6 @@ img {
   align-items: center;
   gap: 1.25rem;
   list-style: none;
-}
-
-@media (max-width: 860px) {
-  .nav-links {
-    display: none;
-  }
 }
 
 .nav-link {
@@ -198,6 +193,50 @@ img {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+@media (max-width: 1100px) {
+  .nav-brand {
+    gap: 0.6rem;
+  }
+  .brand-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  .brand-name {
+    font-size: 1.05rem;
+  }
+  .brand-role {
+    display: none;
+  }
+  .nav-links {
+    gap: 0.65rem;
+  }
+  .nav-link {
+    font-size: 0.82rem;
+    white-space: nowrap;
+    padding: 0.35rem 0.15rem;
+  }
+  .nav-actions {
+    gap: 0.45rem;
+  }
+  .nav-actions .btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  .lang-switch {
+    padding: 0.15rem;
+  }
+  .lang-btn {
+    padding: 0.2rem 0.45rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .nav-links {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -606,6 +645,15 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+  .targets-grid {
+    gap: 1.15rem;
+  }
+  .target-card {
+    padding: 1.35rem 1.15rem;
+  }
 }
 
 @media (max-width: 960px) {
@@ -1225,6 +1273,20 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+  .skills-grid-primary,
+  .skills-grid-secondary {
+    gap: 1rem;
+  }
+  .skill-category-card {
+    padding: 1.25rem 1rem;
+  }
+  .skill-category-title {
+    font-size: 0.95rem;
+    align-items: baseline;
+  }
 }
 
 @media (max-width: 960px) {
