@@ -14,7 +14,7 @@ targets:
   - id: "cloud-providers"
     title: "Cloud Providers & Hyperscalers"
     desc: "AWS Solutions Architect Professional & GCP Associate. Architecture evangelism, reference architecture design, developer tooling, and GenAI integration."
-    tags: ["AWS", "Google Cloud", "Azure", "GenAI", "EKS", "GKE"]
+    tags: ["Multi-Cloud", "EKS & GKE", "GenAI & LLMOps", "Landing Zones", "Well-Architected"]
   - id: "consulting-msp"
     title: "Consulting Firms & MSPs"
     desc: "Pragmatic consulting culture: technical co-founder product vision, cloud portfolio operations (30 clients, €330k budget at Skyloud), and FinOps (-15%)."

@@ -58,6 +58,10 @@
   padding: 0;
 }
 
+svg {
+  max-width: 100%;
+}
+
 html {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
@@ -398,6 +402,21 @@ img {
   border: 1px solid rgba(0, 51, 153, 0.12);
 }
 
+.badge-mini-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.badge-mini-logo svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .pill-badge-gold {
   background: rgba(255, 204, 0, 0.15);
   color: #92400e;
@@ -582,6 +601,12 @@ img {
   flex-shrink: 0;
 }
 
+.target-icon svg,
+.sector-svg-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 [data-theme="dark"] .target-icon {
   color: #60a5fa;
 }
@@ -597,8 +622,37 @@ img {
   font-size: 0.925rem;
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.85rem;
   flex-grow: 1;
+}
+
+.target-service-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed var(--border-subtle);
+}
+
+.target-service-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-primary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+}
+
+.target-service-chip svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  object-fit: contain;
 }
 
 .target-tags {
@@ -607,11 +661,10 @@ img {
   flex-wrap: wrap;
   gap: 0.4rem;
 }
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
 
 .target-tag {
+  display: inline-flex;
+  align-items: center;
   font-size: 0.72rem;
   font-weight: 600;
   padding: 0.2rem 0.55rem;
@@ -703,45 +756,51 @@ img {
 }
 
 .cert-badge-icon {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 0.85rem;
   flex-shrink: 0;
+  padding: 0.45rem;
+}
+
+.cert-badge-icon svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .cert-badge-aws-pro {
-  background: #232f3e;
+  background: #1a2433;
   color: #ff9900;
   border: 1.5px solid #ff9900;
+  box-shadow: 0 0 12px rgba(255, 153, 0, 0.25);
 }
 
 .cert-badge-aws {
-  background: rgba(255, 153, 0, 0.12);
+  background: rgba(255, 153, 0, 0.1);
   color: #ff9900;
   border: 1px solid rgba(255, 153, 0, 0.3);
 }
 
 .cert-badge-gcp {
-  background: rgba(66, 133, 244, 0.12);
+  background: rgba(66, 133, 244, 0.1);
   color: #4285f4;
   border: 1px solid rgba(66, 133, 244, 0.3);
 }
 
 .cert-badge-hashicorp {
-  background: rgba(123, 66, 255, 0.12);
-  color: #7b42ff;
-  border: 1px solid rgba(123, 66, 255, 0.3);
+  background: rgba(132, 79, 186, 0.1);
+  color: #844fba;
+  border: 1px solid rgba(132, 79, 186, 0.3);
 }
 
 .cert-badge-devoteam {
-  background: rgba(242, 68, 62, 0.12);
-  color: #f2443e;
-  border: 1px solid rgba(242, 68, 62, 0.3);
+  background: rgba(248, 72, 94, 0.1);
+  color: #f8485e;
+  border: 1px solid rgba(248, 72, 94, 0.3);
 }
 
 .cert-info {
@@ -870,6 +929,91 @@ img {
   color: var(--eu-blue);
 }
 
+.exp-company-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.2rem;
+}
+
+.company-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 6px;
+  background: var(--bg-tertiary);
+  padding: 0.25rem;
+  border: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.company-logo svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.partner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  padding: 0.15rem 0.55rem;
+  border-radius: 9999px;
+}
+
+.partner-logo {
+  display: inline-flex;
+  align-items: center;
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.partner-logo svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mission-logo {
+  display: inline-flex;
+  align-items: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-right: 0.35rem;
+  vertical-align: -2px;
+  flex-shrink: 0;
+}
+
+.mission-logo svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.institution-logo {
+  display: inline-flex;
+  align-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.35rem;
+  vertical-align: -2px;
+  flex-shrink: 0;
+}
+
+.institution-logo svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 [data-theme="dark"] .exp-company {
   color: #60a5fa;
 }
@@ -965,6 +1109,8 @@ img {
 }
 
 .tech-tag {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   padding: 0.2rem 0.55rem;
@@ -972,6 +1118,27 @@ img {
   background-color: var(--bg-tertiary);
   color: var(--text-secondary);
   border: 1px solid var(--border-subtle);
+}
+
+.tag-icon,
+.tech-icon,
+.skill-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.95rem;
+  height: 0.95rem;
+  margin-right: 0.35rem;
+  flex-shrink: 0;
+  vertical-align: -1px;
+}
+
+.tag-icon svg,
+.tech-icon svg,
+.skill-icon svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* ==========================================================================
@@ -1026,6 +1193,8 @@ img {
 }
 
 .skill-pill {
+  display: inline-flex;
+  align-items: center;
   font-size: 0.825rem;
   font-weight: 500;
   padding: 0.35rem 0.75rem;

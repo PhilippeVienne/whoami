@@ -14,7 +14,7 @@ targets:
   - id: "cloud-providers"
     title: "Cloud Providers & Écosystème"
     desc: "Solutions Architect Pro AWS & GCP. Évangélisation, conception d'architectures de référence, outillage développeurs et intégration IA générative."
-    tags: ["AWS", "Google Cloud", "Azure", "GenAI", "EKS", "GKE"]
+    tags: ["Multi-Cloud", "EKS & GKE", "GenAI & LLMOps", "Landing Zones", "Well-Architected"]
   - id: "consulting-msp"
     title: "Sociétés de Conseil & MSP"
     desc: "Culture du conseil et posture pragmatique : vision produit de co-fondateur tech, gestion de portefeuille d'infrastructures (30 clients, 330 k€ chez Skyloud) et FinOps (-15%)."

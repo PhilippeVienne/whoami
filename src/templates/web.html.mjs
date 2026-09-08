@@ -1,6 +1,8 @@
+import { ICONS, getTechIcon } from './icons.mjs';
+
 /**
  * Template Web Showcase pour Philippe Vienne
- * Génère un site moderne, responsive, avec Bleu Europe, mode sombre, filtres interactifs
+ * Génère un site moderne, responsive, logos vectoriels officiels, mode sombre, filtres interactifs
  */
 
 export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' }) {
@@ -170,16 +172,16 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
       <div class="hero-content">
         <div class="hero-badge-row">
           <span class="pill-badge pill-badge-gold">
-            ★ AWS Solutions Architect Pro
+            <span class="badge-mini-logo">${ICONS.aws}</span> AWS Solutions Architect Pro
           </span>
           <span class="pill-badge">
-            ☁ Google Cloud Associate
+            <span class="badge-mini-logo">${ICONS.gcp}</span> Google Cloud Associate
           </span>
           <span class="pill-badge">
-            ⚙ Terraform Associate
+            <span class="badge-mini-logo">${ICONS.terraform}</span> Terraform Associate
           </span>
           <span class="pill-badge">
-            🎓 INSA Lyon Ingénieur
+            <span class="badge-mini-logo">${ICONS.insa}</span> INSA Lyon Ingénieur
           </span>
         </div>
 
@@ -228,20 +230,60 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
       </div>
 
       <div class="targets-grid">
-        ${(data.targets || []).map(target => `
-          <div class="target-card">
-            <div class="target-header">
-              <div class="target-icon">
-                ${target.id === 'cloud-providers' ? '☁️' : target.id === 'consulting-msp' ? '💼' : '🏦'}
+        ${(data.targets || []).map(target => {
+          const targetIcon = target.id === 'cloud-providers' ? `
+            <svg class="sector-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+            </svg>
+          ` : target.id === 'consulting-msp' ? `
+            <svg class="sector-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              <rect width="20" height="14" x="2" y="6" rx="2"/>
+            </svg>
+          ` : `
+            <svg class="sector-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          `;
+
+          const serviceChips = target.id === 'cloud-providers' ? `
+            <div class="target-service-logos">
+              <span class="target-service-chip">${ICONS.aws} <span>AWS</span></span>
+              <span class="target-service-chip">${ICONS.gcp} <span>Google Cloud</span></span>
+              <span class="target-service-chip">${ICONS.azure} <span>Azure</span></span>
+            </div>
+          ` : target.id === 'consulting-msp' ? `
+            <div class="target-service-logos">
+              <span class="target-service-chip">${ICONS.devoteam} <span>Devoteam</span></span>
+              <span class="target-service-chip">${ICONS.skyloud} <span>Skyloud</span></span>
+            </div>
+          ` : `
+            <div class="target-service-logos">
+              <span class="target-service-chip">${ICONS.edf} <span>EDF</span></span>
+              <span class="target-service-chip">${ICONS.airfrance} <span>Air France</span></span>
+              <span class="target-service-chip">${ICONS.s3ns} <span>S3NS</span></span>
+            </div>
+          `;
+
+          return `
+            <div class="target-card">
+              <div class="target-header">
+                <div class="target-icon">
+                  ${targetIcon}
+                </div>
+                <h3 class="target-title">${target.title}</h3>
               </div>
-              <h3 class="target-title">${target.title}</h3>
+              <p class="target-desc">${target.desc}</p>
+              ${serviceChips}
+              <div class="target-tags">
+                ${(target.tags || []).map(tag => {
+                  const tagIcon = getTechIcon(tag);
+                  return `<span class="target-tag">${tagIcon ? `<span class="tag-icon">${tagIcon}</span>` : ''}${tag}</span>`;
+                }).join('')}
+              </div>
             </div>
-            <p class="target-desc">${target.desc}</p>
-            <div class="target-tags">
-              ${(target.tags || []).map(tag => `<span class="target-tag">${tag}</span>`).join('')}
-            </div>
-          </div>
-        `).join('')}
+          `;
+        }).join('')}
       </div>
     </div>
   </section>
@@ -265,16 +307,17 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
             : cert.badge === 'hashicorp' ? 'cert-badge-hashicorp'
             : 'cert-badge-devoteam';
 
-          const badgeText = cert.badge === 'aws-pro' ? 'AWS PRO'
-            : cert.badge === 'aws' ? 'AWS'
-            : cert.badge === 'gcp' ? 'GCP'
-            : cert.badge === 'hashicorp' ? 'TERRA'
-            : 'DEV';
+          const certLogo = (cert.badge === 'aws-pro' || cert.badge === 'aws') ? ICONS.aws
+            : cert.badge === 'gcp' ? ICONS.gcp
+            : cert.badge === 'hashicorp' ? ICONS.terraform
+            : ICONS.devoteam;
 
           return `
             <div class="cert-card ${cert.highlight ? 'featured' : ''}">
               <div class="cert-header">
-                <div class="cert-badge-icon ${badgeClass}">${badgeText}</div>
+                <div class="cert-badge-icon ${badgeClass}" title="${cert.issuer}">
+                  ${certLogo}
+                </div>
                 <div class="cert-info">
                   <h3 class="cert-name">${cert.name}</h3>
                   <div class="cert-issuer">${cert.issuer}</div>
@@ -297,7 +340,9 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           ${(data.certifications || []).filter(c => c.badge === 'devoteam').map(cert => `
             <div class="cert-card cert-card-internal">
               <div class="cert-header">
-                <div class="cert-badge-icon cert-badge-devoteam">DEV</div>
+                <div class="cert-badge-icon cert-badge-devoteam" title="${cert.issuer}">
+                  ${ICONS.devoteam}
+                </div>
                 <div class="cert-info">
                   <h3 class="cert-name">${cert.name}</h3>
                   <div class="cert-issuer">${cert.issuer}</div>
@@ -344,7 +389,11 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           <div class="exp-header">
             <div class="exp-role-group">
               <h3 class="exp-role">${isEn ? 'Most Valuable Cloud & DevOps Architect' : 'Most Valuable Cloud & DevOps Architect'}</h3>
-              <div class="exp-company">Devoteam | AWS Premier Partner</div>
+              <div class="exp-company-row">
+                <span class="company-logo" title="Devoteam">${ICONS.devoteam}</span>
+                <span class="exp-company">Devoteam</span>
+                <span class="partner-badge"><span class="partner-logo">${ICONS.aws}</span> AWS Premier Partner</span>
+              </div>
             </div>
             <div class="exp-meta">
               <span class="exp-period">${isEn ? 'Sept. 2025 – Present' : 'Septembre 2025 – Présent'} (${t.permanent})</span>
@@ -362,7 +411,8 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
             <!-- Mission EDF IA -->
             <div class="mission-block">
               <div class="mission-title">
-                ⚡ EDF — DIVNUM / PAT Software (Plateau Outils de Développement)
+                <span class="mission-logo" title="EDF">${ICONS.edf}</span>
+                <span>EDF — DIVNUM / PAT Software (Plateau Outils de Développement)</span>
               </div>
               <div class="mission-meta">
                 ${isEn ? 'Since May 2026 – Present' : 'Depuis Mai 2026 – Présent'} • ${isEn ? 'AI in SDLC & DevSecOps' : 'IA dans le cycle logiciel & DevSecOps'}
@@ -380,18 +430,17 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
                 </li>
               </ul>
               <div class="exp-tech-row" style="margin-top: 0.5rem; padding-top: 0.5rem;">
-                <span class="tech-tag">GenAI</span>
-                <span class="tech-tag">DevSecOps</span>
-                <span class="tech-tag">Developer Tooling</span>
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">CI/CD</span>
+                ${['GenAI', 'DevSecOps', 'Developer Tooling', 'Python', 'CI/CD'].map(tech => `
+                  <span class="tech-tag">${getTechIcon(tech) ? `<span class="tech-icon">${getTechIcon(tech)}</span>` : ''}${tech}</span>
+                `).join('')}
               </div>
             </div>
 
             <!-- Mission Vapérail -->
             <div class="mission-block">
               <div class="mission-title">
-                🚂 Vapérail & Devoteam Lyon — Géotracking Ferroviaire & Plateforme Kiro
+                <span class="mission-logo" title="Microsoft Azure">${ICONS.azure}</span>
+                <span>Vapérail & Devoteam Lyon — Géotracking Ferroviaire & Plateforme Kiro</span>
               </div>
               <div class="mission-meta">
                 ${isEn ? 'April 2026' : 'Avril 2026'} • ${isEn ? 'GIS & Cloud Azure Architecture' : 'SIG & Déploiement Cloud Azure'}
@@ -409,18 +458,18 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
                 </li>
               </ul>
               <div class="exp-tech-row" style="margin-top: 0.5rem; padding-top: 0.5rem;">
-                <span class="tech-tag">Microsoft Azure</span>
-                <span class="tech-tag">PostGIS</span>
-                <span class="tech-tag">MapLibre</span>
-                <span class="tech-tag">OpenRailMap</span>
-                <span class="tech-tag">API REST</span>
+                ${['Microsoft Azure', 'PostGIS', 'MapLibre', 'OpenRailMap', 'API REST'].map(tech => `
+                  <span class="tech-tag">${getTechIcon(tech) ? `<span class="tech-icon">${getTechIcon(tech)}</span>` : ''}${tech}</span>
+                `).join('')}
               </div>
             </div>
 
             <!-- Mission EDF OpenShift -->
             <div class="mission-block">
               <div class="mission-title">
-                ⚛️ EDF — Expert SI OpenShift (Environnement Nucléaire Régulé)
+                <span class="mission-logo" title="Red Hat OpenShift">${ICONS.openshift}</span>
+                <span class="mission-logo" title="EDF">${ICONS.edf}</span>
+                <span>EDF — Expert SI OpenShift (Environnement Nucléaire Régulé)</span>
               </div>
               <div class="mission-meta">
                 ${isEn ? 'Oct. 2025 – March 2026 (6 mos)' : 'Octobre 2025 – Mars 2026 (6 mois)'} • ${isEn ? 'Regulated Nuclear CaaS Migration & Sovereign Multi-Cloud' : 'Migration CaaS Nucléaire Régulé & Multi-Cloud Souverain'}
@@ -443,12 +492,9 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
                 </li>
               </ul>
               <div class="exp-tech-row" style="margin-top: 0.5rem; padding-top: 0.5rem;">
-                <span class="tech-tag">Red Hat OpenShift</span>
-                <span class="tech-tag">Kubernetes</span>
-                <span class="tech-tag">AWS</span>
-                <span class="tech-tag">GCP / S3NS</span>
-                <span class="tech-tag">Nucléaire Régulé</span>
-                <span class="tech-tag">Sécurité by Design</span>
+                ${['Red Hat OpenShift', 'Kubernetes', 'AWS', 'GCP / S3NS', 'Nucléaire Régulé', 'Sécurité by Design'].map(tech => `
+                  <span class="tech-tag">${getTechIcon(tech) ? `<span class="tech-icon">${getTechIcon(tech)}</span>` : ''}${tech}</span>
+                `).join('')}
               </div>
             </div>
           </div>
@@ -458,8 +504,12 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
         <article class="exp-card" data-category="cloud">
           <div class="exp-header">
             <div class="exp-role-group">
-              <h3 class="exp-role">${isEn ? 'Cloud & Kubernetes Architect' : 'Architecte Cloud & Kubernetes'}</h3>
-              <div class="exp-company">Skyloud</div>
+              <h3 class="exp-role">${isEn ? 'Cloud & Kubernetes Solutions Architect' : 'Architecte Cloud & Kubernetes'}</h3>
+              <div class="exp-company-row">
+                <span class="company-logo" title="Skyloud">${ICONS.skyloud}</span>
+                <span class="exp-company">Skyloud</span>
+                <span class="partner-badge"><span class="partner-logo">${ICONS.aws}</span> <span class="partner-logo">${ICONS.gcp}</span> Cloud Partner</span>
+              </div>
             </div>
             <div class="exp-meta">
               <span class="exp-period">${isEn ? 'Nov. 2023 – Sept. 2025 (1 yr 11 mos)' : 'Novembre 2023 – Septembre 2025 (1 an 11 mois)'}</span>
@@ -492,13 +542,9 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           </ul>
 
           <div class="exp-tech-row">
-            <span class="tech-tag">AWS (EKS, RDS, CloudFront, EC2)</span>
-            <span class="tech-tag">Microsoft Azure</span>
-            <span class="tech-tag">Scaleway</span>
-            <span class="tech-tag">Terraform</span>
-            <span class="tech-tag">Kubernetes</span>
-            <span class="tech-tag">Helm</span>
-            <span class="tech-tag">FinOps</span>
+            ${['AWS (EKS, RDS, CloudFront, EC2)', 'Microsoft Azure', 'Scaleway', 'Terraform', 'Kubernetes', 'Helm', 'FinOps'].map(tech => `
+              <span class="tech-tag">${getTechIcon(tech) ? `<span class="tech-icon">${getTechIcon(tech)}</span>` : ''}${tech}</span>
+            `).join('')}
           </div>
         </article>
 
@@ -507,7 +553,11 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           <div class="exp-header">
             <div class="exp-role-group">
               <h3 class="exp-role">${isEn ? 'Technical Co-Founder & CTO (Startup)' : 'Co-fondateur Technique & CTO (Startup)'}</h3>
-              <div class="exp-company">Smartfire</div>
+              <div class="exp-company-row">
+                <span class="company-logo" title="Smartfire">${ICONS.smartfire}</span>
+                <span class="exp-company">Smartfire</span>
+                <span class="partner-badge">Startup SaaS & R&D</span>
+              </div>
             </div>
             <div class="exp-meta">
               <span class="exp-period">${isEn ? 'Feb. 2019 – Aug. 2023 (4 yrs 7 mos)' : 'Février 2019 – Août 2023 (4 ans 7 mois)'}</span>
@@ -545,14 +595,9 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           </ul>
 
           <div class="exp-tech-row">
-            <span class="tech-tag">Kubernetes</span>
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">OpenStack</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">React.js</span>
-            <span class="tech-tag">VSCode Web</span>
-            <span class="tech-tag">AWS</span>
-            <span class="tech-tag">OVHcloud</span>
+            ${['Kubernetes', 'Java', 'OpenStack', 'TypeScript', 'React.js', 'VSCode Web', 'AWS', 'OVHcloud'].map(tech => `
+              <span class="tech-tag">${getTechIcon(tech) ? `<span class="tech-icon">${getTechIcon(tech)}</span>` : ''}${tech}</span>
+            `).join('')}
           </div>
         </article>
 
@@ -561,7 +606,13 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           <div class="exp-header">
             <div class="exp-role-group">
               <h3 class="exp-role">${isEn ? 'DevOps Engineer — Aerospace Datacenter Modernization' : 'Ingénieur DevOps — Secteur Aérien'}</h3>
-              <div class="exp-company">Atos / Air France</div>
+              <div class="exp-company-row">
+                <span class="company-logo" title="Atos">${ICONS.atos}</span>
+                <span class="exp-company">Atos</span>
+                <span style="color: var(--text-muted); font-size: 0.8rem;">•</span>
+                <span class="company-logo" title="Air France">${ICONS.airfrance}</span>
+                <span class="exp-company">Air France</span>
+              </div>
             </div>
             <div class="exp-meta">
               <span class="exp-period">${isEn ? 'Oct. 2018 – Jan. 2019 (4 mos)' : 'Octobre 2018 – Janvier 2019 (4 mois)'}</span>
@@ -583,12 +634,9 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           </ul>
 
           <div class="exp-tech-row">
-            <span class="tech-tag">Kubernetes</span>
-            <span class="tech-tag">RKE</span>
-            <span class="tech-tag">Rancher</span>
-            <span class="tech-tag">VMware vSphere</span>
-            <span class="tech-tag">Datacenter Privé</span>
-            <span class="tech-tag">Docker</span>
+            ${['Kubernetes', 'RKE', 'Rancher', 'VMware vSphere', 'Datacenter Privé', 'Docker'].map(tech => `
+              <span class="tech-tag">${getTechIcon(tech) ? `<span class="tech-icon">${getTechIcon(tech)}</span>` : ''}${tech}</span>
+            `).join('')}
           </div>
         </article>
 
@@ -597,7 +645,11 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           <div class="exp-header">
             <div class="exp-role-group">
               <h3 class="exp-role">${isEn ? 'Java Software Engineer & CI/CD (FinTech)' : 'Ingénieur Développeur Java & CI/CD (FinTech)'}</h3>
-              <div class="exp-company">ActiveViam</div>
+              <div class="exp-company-row">
+                <span class="company-logo" title="ActiveViam">${ICONS.activeviam}</span>
+                <span class="exp-company">ActiveViam</span>
+                <span class="partner-badge">FinTech Singapour</span>
+              </div>
             </div>
             <div class="exp-meta">
               <span class="exp-period">${isEn ? 'Feb. 2018 – Aug. 2018 (7 mos)' : 'Février 2018 – Août 2018 (7 mois)'}</span>
@@ -619,12 +671,9 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           </ul>
 
           <div class="exp-tech-row">
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">ActivePivot</span>
-            <span class="tech-tag">Base de données OLAP</span>
-            <span class="tech-tag">CI/CD</span>
-            <span class="tech-tag">Jenkins</span>
-            <span class="tech-tag">Marchés Financiers</span>
+            ${['Java', 'ActivePivot', 'Base de données OLAP', 'CI/CD', 'Jenkins', 'Marchés Financiers'].map(tech => `
+              <span class="tech-tag">${getTechIcon(tech) ? `<span class="tech-icon">${getTechIcon(tech)}</span>` : ''}${tech}</span>
+            `).join('')}
           </div>
         </article>
 
@@ -633,7 +682,10 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           <div class="exp-header">
             <div class="exp-role-group">
               <h3 class="exp-role">${isEn ? 'Early Career Engineering Engagements' : 'Premières Expériences & Fondations Ingénieur'}</h3>
-              <div class="exp-company">Moonkey • Freelance • Fédération Française de Spéléologie</div>
+              <div class="exp-company-row">
+                <span class="company-logo" title="Linux">${ICONS.linux}</span>
+                <span class="exp-company">Moonkey • Freelance • Fédération Française de Spéléologie</span>
+              </div>
             </div>
             <div class="exp-meta">
               <span class="exp-period">2013 – 2017</span>
@@ -654,11 +706,9 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           </ul>
 
           <div class="exp-tech-row">
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">Rancher</span>
-            <span class="tech-tag">Ruby on Rails</span>
-            <span class="tech-tag">Ionic</span>
-            <span class="tech-tag">JavaFX</span>
+            ${['Docker', 'Rancher', 'Ruby on Rails', 'Ionic', 'JavaFX'].map(tech => `
+              <span class="tech-tag">${getTechIcon(tech) ? `<span class="tech-icon">${getTechIcon(tech)}</span>` : ''}${tech}</span>
+            `).join('')}
           </div>
         </article>
 
@@ -684,7 +734,10 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
               <span>${cat.category}</span>
             </h3>
             <div class="skill-pills">
-              ${(cat.skills || []).map(s => `<span class="skill-pill">${s}</span>`).join('')}
+              ${(cat.skills || []).map(s => {
+                const icon = getTechIcon(s);
+                return `<span class="skill-pill">${icon ? `<span class="skill-icon">${icon}</span>` : ''}${s}</span>`;
+              }).join('')}
             </div>
           </div>
         `).join('')}
@@ -698,7 +751,10 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
               <span>${cat.category}</span>
             </h3>
             <div class="skill-pills">
-              ${(cat.skills || []).map(s => `<span class="skill-pill">${s}</span>`).join('')}
+              ${(cat.skills || []).map(s => {
+                const icon = getTechIcon(s);
+                return `<span class="skill-pill">${icon ? `<span class="skill-icon">${icon}</span>` : ''}${s}</span>`;
+              }).join('')}
             </div>
           </div>
         `).join('')}
@@ -722,7 +778,7 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           ${(data.education || []).map(edu => `
             <div class="edu-item">
               <div class="edu-degree">${edu.degree}</div>
-              <div class="edu-school">${edu.institution} • ${edu.location}</div>
+              <div class="edu-school">${edu.institution.includes('INSA') ? `<span class="institution-logo" title="INSA Lyon">${ICONS.insa}</span>` : ''}<strong>${edu.institution}</strong> • ${edu.location}</div>
               <div class="edu-period">${edu.period}</div>
               <div class="edu-detail">${edu.details}</div>
             </div>

@@ -25,5 +25,8 @@
   "dependencies": {
     "marked": "^15.0.7",
     "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "simple-icons": "^16.30.0"
   }
 }
