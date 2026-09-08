@@ -49,13 +49,13 @@ export function generatePdfs() {
   try {
     // PDF Français
     console.log(' -> Génération de Philippe_Vienne_CV_FR.pdf...');
-    execSync(`"${chrome}" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="${frPdfPath}" "file://${frHtmlPath}"`, {
+    execSync(`"${chrome}" --headless --no-sandbox --disable-gpu --no-pdf-header-footer --print-to-pdf="${frPdfPath}" "file://${frHtmlPath}"`, {
       stdio: 'inherit'
     });
 
     // PDF Anglais
     console.log(' -> Génération de Philippe_Vienne_CV_EN.pdf...');
-    execSync(`"${chrome}" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="${enPdfPath}" "file://${enHtmlPath}"`, {
+    execSync(`"${chrome}" --headless --no-sandbox --disable-gpu --no-pdf-header-footer --print-to-pdf="${enPdfPath}" "file://${enHtmlPath}"`, {
       stdio: 'inherit'
     });
 
