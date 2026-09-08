@@ -149,9 +149,9 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
         </button>
 
         <!-- ATS PDF CTA -->
-        <a href="${relBase}/${t.pdfFile}" download class="btn btn-primary" title="${t.downloadPdf}">
+        <a href="${relBase}/${t.pdfFile}" download class="btn btn-primary nav-pdf-btn" title="${t.downloadPdf}">
           <span>📄</span>
-          <span>PDF ATS</span>
+          <span class="btn-text-pdf">PDF ATS</span>
         </a>
       </div>
     </div>
@@ -181,7 +181,7 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
             <span class="badge-mini-logo">${ICONS.terraform}</span> Terraform Associate
           </span>
           <span class="pill-badge">
-            INSA Lyon Ingénieur
+            <span class="badge-mini-logo badge-insa-logo">${ICONS.insa}</span> INSA Lyon Ingénieur
           </span>
         </div>
 
@@ -768,7 +768,10 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           ${(data.education || []).map(edu => `
             <div class="edu-item">
               <div class="edu-degree">${edu.degree}</div>
-              <div class="edu-school"><strong>${edu.institution}</strong> • ${edu.location}</div>
+              <div class="edu-school">
+                ${edu.institution === 'INSA Lyon' ? `<span class="edu-logo" title="INSA Lyon">${ICONS.insa}</span>` : ''}
+                <strong>${edu.institution}</strong> • ${edu.location}
+              </div>
               <div class="edu-period">${edu.period}</div>
               <div class="edu-detail">${edu.details}</div>
             </div>
