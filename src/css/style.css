@@ -4,12 +4,12 @@
    ========================================================================== */
 
 :root {
-  /* Palette Bleu Europe & Confiance */
-  --eu-blue: #003399;          /* Bleu drapeau européen / Reflex Blue */
-  --eu-blue-deep: #002266;     /* Bleu profond autorité */
-  --eu-blue-light: #1a56cc;    /* Bleu vif actif */
-  --eu-gold: #FFCC00;          /* Or européen */
-  --eu-gold-dark: #d4a000;     /* Or contrasté */
+  /* Palette Haute Précision Cloud & Tech */
+  --eu-blue: #2563eb;          /* Bleu technologique moderne (Blue 600) */
+  --eu-blue-deep: #1d4ed8;     /* Bleu profond (Blue 700) */
+  --eu-blue-light: #3b82f6;    /* Bleu vif actif (Blue 500) */
+  --eu-gold: #f59e0b;          /* Ambre doré prestigieux */
+  --eu-gold-dark: #d97706;     /* Ambre contrasté */
 
   /* Thème Clair (High Trust & Clarity) */
   --bg-primary: #f8fafc;       /* Slate 50 */
@@ -19,13 +19,13 @@
   --text-secondary: #334155;   /* Slate 700 */
   --text-muted: #64748b;       /* Slate 500 */
   --border-subtle: #e2e8f0;    /* Slate 200 */
-  --border-focus: #003399;
-  --card-shadow: 0 4px 20px -2px rgba(0, 51, 153, 0.07), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
-  --card-shadow-hover: 0 12px 32px -4px rgba(0, 51, 153, 0.14), 0 4px 10px -2px rgba(0, 0, 0, 0.05);
+  --border-focus: #2563eb;
+  --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+  --card-shadow-hover: 0 12px 32px -4px rgba(37, 99, 235, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
 
   /* Accents */
-  --badge-bg: rgba(0, 51, 153, 0.08);
-  --badge-text: #003399;
+  --badge-bg: rgba(37, 99, 235, 0.08);
+  --badge-text: #2563eb;
   --success-color: #10b981;
   --success-bg: rgba(16, 185, 129, 0.12);
 
@@ -35,16 +35,16 @@
 }
 
 [data-theme="dark"] {
-  --bg-primary: #060e1d;       /* Nuit marine ultra-profonde */
-  --bg-secondary: #0c1a33;     /* Bleu marine profond cartes */
-  --bg-tertiary: #132445;      /* Bleu marine moyen */
+  --bg-primary: #090d16;       /* Nuit obsidienne / Slate profond */
+  --bg-secondary: #0f172a;     /* Slate 900 cartes */
+  --bg-tertiary: #1e293b;      /* Slate 800 */
   --text-primary: #f8fafc;     /* Slate 50 */
   --text-secondary: #cbd5e1;   /* Slate 300 */
   --text-muted: #94a3b8;       /* Slate 400 */
-  --border-subtle: #1e365d;    /* Bordure bleu nuit */
+  --border-subtle: #334155;    /* Slate 700 */
   --border-focus: #3b82f6;
   --card-shadow: 0 6px 24px -4px rgba(0, 0, 0, 0.6);
-  --card-shadow-hover: 0 14px 36px -4px rgba(0, 51, 153, 0.35);
+  --card-shadow-hover: 0 14px 36px -4px rgba(37, 99, 235, 0.25);
 
   --badge-bg: rgba(59, 130, 246, 0.16);
   --badge-text: #60a5fa;
@@ -213,13 +213,13 @@ img {
 .btn-primary {
   background-color: var(--eu-blue);
   color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 51, 153, 0.25);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
 }
 
 .btn-primary:hover {
   background-color: var(--eu-blue-deep);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 51, 153, 0.35);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 [data-theme="dark"] .btn-primary {
@@ -309,7 +309,7 @@ img {
    ========================================================================== */
 .hero-section {
   padding: 4rem 0 3rem;
-  background: linear-gradient(180deg, rgba(0, 51, 153, 0.04) 0%, rgba(248, 250, 252, 0) 100%);
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.04) 0%, rgba(248, 250, 252, 0) 100%);
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -345,7 +345,7 @@ img {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--border-subtle);
-  box-shadow: 0 4px 20px rgba(0, 51, 153, 0.12);
+  box-shadow: 0 4px 20px var(--border-subtle);
   transition: all 0.2s ease;
 }
 
@@ -399,7 +399,7 @@ img {
   font-weight: 600;
   background-color: var(--badge-bg);
   color: var(--badge-text);
-  border: 1px solid rgba(0, 51, 153, 0.12);
+  border: 1px solid var(--border-subtle);
 }
 
 .badge-mini-logo {
@@ -412,8 +412,9 @@ img {
 }
 
 .badge-mini-logo svg {
-  width: 100%;
-  height: 100%;
+  height: 0.95rem;
+  width: auto;
+  max-width: 1.8rem;
   object-fit: contain;
 }
 
@@ -650,8 +651,9 @@ img {
 }
 
 .target-service-chip svg {
-  width: 0.95rem;
   height: 0.95rem;
+  width: auto;
+  max-width: 1.8rem;
   object-fit: contain;
 }
 
@@ -769,6 +771,8 @@ img {
 .cert-badge-icon svg {
   width: 100%;
   height: 100%;
+  max-width: 2rem;
+  max-height: 2rem;
   object-fit: contain;
 }
 
@@ -872,7 +876,7 @@ img {
   background-color: var(--eu-blue);
   color: #ffffff;
   border-color: var(--eu-blue);
-  box-shadow: 0 2px 8px rgba(0, 51, 153, 0.25);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
 }
 
 [data-theme="dark"] .filter-btn.active {
@@ -941,18 +945,21 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.85rem;
+  width: auto;
+  min-width: 1.85rem;
+  max-width: 3.5rem;
   height: 1.85rem;
   border-radius: 6px;
   background: var(--bg-tertiary);
-  padding: 0.25rem;
+  padding: 0.2rem 0.35rem;
   border: 1px solid var(--border-subtle);
   flex-shrink: 0;
 }
 
 .company-logo svg {
-  width: 100%;
-  height: 100%;
+  height: 1.25rem;
+  width: auto;
+  max-width: 3.2rem;
   object-fit: contain;
 }
 
@@ -977,8 +984,9 @@ img {
 }
 
 .partner-logo svg {
-  width: 100%;
-  height: 100%;
+  height: 0.95rem;
+  width: auto;
+  max-width: 1.8rem;
   object-fit: contain;
 }
 
@@ -1423,7 +1431,7 @@ img {
   border-radius: 8px;
   font-size: 0.875rem;
   font-weight: 600;
-  box-shadow: 0 4px 16px rgba(0, 51, 153, 0.3);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25);
   display: flex;
   align-items: center;
   gap: 0.5rem;
