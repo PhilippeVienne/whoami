@@ -269,7 +269,7 @@ export function renderAtsPage({ data, lang = 'fr', inlinedCss = '' }) {
   <section class="ats-section" style="margin-bottom: 0;">
     <h2 class="ats-section-title">${t.titleLang}</h2>
     <p class="ats-summary">
-      ${(data.languages || []).map(l => `<strong>${l.name} :</strong> ${l.level}`).join(' &nbsp;•&nbsp; ')}
+      ${(data.languages || []).map(l => `<strong>${l.name} :</strong> ${l.level}${l.detail ? ` (${l.detail})` : ''}`).join(' &nbsp;•&nbsp; ')}
     </p>
   </section>
 

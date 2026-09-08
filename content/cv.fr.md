@@ -45,12 +45,31 @@ metrics:
     detail: "Startup Smartfire : profil technique des deux fondateurs, conception du SaaS de 0 à 1"
 
 certifications:
+  - name: "AWS Certified Solutions Architect – Professional"
+    issuer: "Amazon Web Services (AWS)"
+    date: "03/2024"
+    expires: "03/2027"
+    badge: "aws-pro"
+    highlight: true
+    verified: true
   - name: "Google Cloud Certified – Associate Cloud Engineer"
     issuer: "Google Cloud"
     date: "08/2026"
     expires: "08/2029"
     badge: "gcp"
     credential_id: "AssociateCloudEngineer20260802-8-9h1vo0"
+    verified: true
+  - name: "HashiCorp Certified : Terraform Associate (003)"
+    issuer: "HashiCorp"
+    date: "10/2025"
+    expires: "10/2027"
+    badge: "hashicorp"
+    verified: true
+  - name: "AWS Certified Solutions Architect – Associate"
+    issuer: "Amazon Web Services (AWS)"
+    date: "03/2024"
+    expires: "03/2027"
+    badge: "aws"
     verified: true
   - name: "AWS Certified Developer – Associate"
     issuer: "Amazon Web Services (AWS)"
@@ -70,11 +89,11 @@ certifications:
     expires: "11/2028"
     badge: "aws"
     verified: true
-  - name: "HashiCorp Certified : Terraform Associate (003)"
-    issuer: "HashiCorp"
-    date: "10/2025"
-    expires: "10/2027"
-    badge: "hashicorp"
+  - name: "AWS Certified Cloud Practitioner"
+    issuer: "Amazon Web Services (AWS)"
+    date: "01/2024"
+    expires: "11/2028"
+    badge: "aws"
     verified: true
   - name: "GenAI Level 1"
     issuer: "Devoteam"
@@ -87,25 +106,6 @@ certifications:
     date: "09/2025"
     expires: null
     badge: "devoteam"
-    verified: true
-  - name: "AWS Certified Solutions Architect – Professional"
-    issuer: "Amazon Web Services (AWS)"
-    date: "03/2024"
-    expires: "03/2027"
-    badge: "aws-pro"
-    highlight: true
-    verified: true
-  - name: "AWS Certified Solutions Architect – Associate"
-    issuer: "Amazon Web Services (AWS)"
-    date: "03/2024"
-    expires: "03/2027"
-    badge: "aws"
-    verified: true
-  - name: "AWS Certified Cloud Practitioner"
-    issuer: "Amazon Web Services (AWS)"
-    date: "01/2024"
-    expires: "11/2028"
-    badge: "aws"
     verified: true
 
 skills_categories:
@@ -125,7 +125,8 @@ languages:
     level: "Langue maternelle"
     code: "fr"
   - name: "Anglais"
-    level: "Courant / Bilingue (Usage professionnel quotidien, expérience internationale à Singapour)"
+    level: "Courant / Bilingue"
+    detail: "Usage professionnel quotidien, expérience internationale à Singapour"
     code: "en"
   - name: "Espagnol"
     level: "Notions de base"

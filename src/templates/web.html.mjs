@@ -15,12 +15,11 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
     downloadPdf: isEn ? 'Download ATS CV (PDF)' : 'Télécharger CV ATS (PDF)',
     copyMarkdown: isEn ? 'Copy Markdown for AI' : 'Copier Markdown pour IA',
     availableBadge: isEn ? 'Open for strategic opportunities' : 'À l\'écoute d\'opportunités stratégiques',
-    metricsTitle: isEn ? 'Key Figures & Track Record' : 'Chiffres Clés & Track Record',
-    targetsTag: isEn ? 'Value Proposition & Alignment' : 'Positionnement Stratégique',
-    targetsTitle: isEn ? 'Target Sectors & Alignment' : 'Pourquoi me confier vos architectures critiques ?',
+    targetsTag: isEn ? 'Operational Contexts' : 'Domaines d\'Intervention',
+    targetsTitle: isEn ? 'Core Practice Areas & Architectures' : 'Environnements d\'Intervention & Architectures',
     targetsSub: isEn 
-      ? 'An engineering and pragmatic co-founder profile designed for high-scale, compliance-driven, and transformative cloud missions.'
-      : 'Un profil à l\'intersection du conseil de haut niveau, de l\'agilité de co-fondateur tech et de l\'ingénierie cloud de pointe.',
+      ? 'Architectural authority, pragmatic technical co-founder agility, and hands-on multi-cloud engineering for critical systems.'
+      : 'Autorité architecturale, agilité de co-fondateur tech et ingénierie multi-cloud de pointe pour systèmes critiques.',
     certsTag: isEn ? 'Verified Credentials' : 'Certifications Validées',
     certsTitle: isEn ? 'Cloud & Architecture Certifications' : 'Certifications Officielles Cloud & DevOps',
     certsSub: isEn
@@ -212,28 +211,7 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
             <span>🤖</span>
             <span>${t.copyMarkdown}</span>
           </button>
-          <a href="${relBase}/${t.pdfAltFile}" download class="btn btn-secondary" style="font-size: 0.8rem;">
-            <span>🌐</span>
-            <span>${t.pdfAltLabel}</span>
-          </a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================================================================
-       KEY METRICS / CHIFFRES CLÉS
-       ==================================================================== -->
-  <section class="metrics-section">
-    <div class="container">
-      <div class="metrics-grid">
-        ${(data.metrics || []).map(m => `
-          <div class="metric-card">
-            <div class="metric-value">${m.value}</div>
-            <div class="metric-label">${m.label}</div>
-            <div class="metric-detail">${m.detail}</div>
-          </div>
-        `).join('')}
       </div>
     </div>
   </section>
@@ -280,7 +258,7 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
       </div>
 
       <div class="certs-grid">
-        ${(data.certifications || []).map(cert => {
+        ${(data.certifications || []).filter(c => c.badge !== 'devoteam').map(cert => {
           const badgeClass = cert.badge === 'aws-pro' ? 'cert-badge-aws-pro'
             : cert.badge === 'aws' ? 'cert-badge-aws'
             : cert.badge === 'gcp' ? 'cert-badge-gcp'
@@ -309,6 +287,29 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
             </div>
           `;
         }).join('')}
+      </div>
+
+      <div class="certs-internal-wrapper">
+        <div class="certs-internal-title">
+          ${isEn ? 'Continuous Learning & Internal Accreditations' : 'Accréditations & Engagements Internes (Devoteam)'}
+        </div>
+        <div class="certs-internal-grid">
+          ${(data.certifications || []).filter(c => c.badge === 'devoteam').map(cert => `
+            <div class="cert-card cert-card-internal">
+              <div class="cert-header">
+                <div class="cert-badge-icon cert-badge-devoteam">DEV</div>
+                <div class="cert-info">
+                  <h3 class="cert-name">${cert.name}</h3>
+                  <div class="cert-issuer">${cert.issuer}</div>
+                </div>
+              </div>
+              <div class="cert-footer">
+                <span>${t.obtained}: <strong>${cert.date}</strong></span>
+                <span class="cert-status">✓ Valide</span>
+              </div>
+            </div>
+          `).join('')}
+        </div>
       </div>
     </div>
   </section>
@@ -675,8 +676,22 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
         <h2 class="section-title">${t.skillsTitle}</h2>
       </div>
 
-      <div class="skills-grid">
-        ${(data.skills_categories || []).map(cat => `
+      <div class="skills-grid-primary">
+        ${(data.skills_categories || []).slice(0, 3).map(cat => `
+          <div class="skill-category-card">
+            <h3 class="skill-category-title">
+              <span>●</span>
+              <span>${cat.category}</span>
+            </h3>
+            <div class="skill-pills">
+              ${(cat.skills || []).map(s => `<span class="skill-pill">${s}</span>`).join('')}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="skills-grid-secondary">
+        ${(data.skills_categories || []).slice(3).map(cat => `
           <div class="skill-category-card">
             <h3 class="skill-category-title">
               <span>●</span>
@@ -716,14 +731,17 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
 
         <!-- Languages -->
         <div class="edu-card">
-          <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.75rem;">
             ${t.languages}
           </h3>
           <ul class="lang-list">
             ${(data.languages || []).map(l => `
               <li class="lang-item">
-                <span class="lang-name">${l.name}</span>
-                <span class="lang-level">${l.level}</span>
+                <div class="lang-header">
+                  <span class="lang-name">${l.name}</span>
+                  <span class="lang-badge">${l.level}</span>
+                </div>
+                ${l.detail ? `<div class="lang-detail">${l.detail}</div>` : ''}
               </li>
             `).join('')}
           </ul>
