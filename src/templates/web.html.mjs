@@ -14,7 +14,7 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
     navExp: isEn ? 'Experience' : 'Expériences',
     navSkills: isEn ? 'Skills' : 'Compétences',
     navEdu: isEn ? 'Education' : 'Formation',
-    downloadPdf: isEn ? 'Download ATS CV (PDF)' : 'Télécharger CV ATS (PDF)',
+    downloadPdf: isEn ? 'Download CV (PDF)' : 'Télécharger CV (PDF)',
     copyMarkdown: isEn ? 'Copy Markdown for AI' : 'Copier Markdown pour IA',
     availableBadge: isEn ? 'Open for strategic opportunities' : 'À l\'écoute d\'opportunités stratégiques',
     targetsTag: isEn ? 'Operational Contexts' : 'Domaines d\'Intervention',
@@ -148,10 +148,10 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           <span id="theme-icon">🌙</span>
         </button>
 
-        <!-- ATS PDF CTA -->
+        <!-- PDF CTA -->
         <a href="${relBase}/${t.pdfFile}" download class="btn btn-primary nav-pdf-btn" title="${t.downloadPdf}">
           <span>📄</span>
-          <span class="btn-text-pdf">PDF ATS</span>
+          <span class="btn-text-pdf">PDF</span>
         </a>
       </div>
     </div>
