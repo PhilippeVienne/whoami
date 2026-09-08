@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="euBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#003399"/>
+      <stop offset="100%" stop-color="#001a4e"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#FFA500"/>
+    </linearGradient>
+  </defs>
+  <!-- Background rounded squircle -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#euBlueGrad)" stroke="#2563eb" stroke-width="1.5"/>
+  <!-- Cloud tech stylized nodes -->
+  <circle cx="32" cy="14" r="2.5" fill="url(#goldGrad)"/>
+  <circle cx="48" cy="22" r="2" fill="url(#goldGrad)"/>
+  <circle cx="16" cy="22" r="2" fill="url(#goldGrad)"/>
+  <!-- Monogram PV -->
+  <text x="32" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-1">PV</text>
+  <!-- Trust bar -->
+  <rect x="18" y="50" width="28" height="3" rx="1.5" fill="url(#goldGrad)"/>
+</svg>

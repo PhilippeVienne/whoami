@@ -1,0 +1,29 @@
+{
+  "name": "whoami",
+  "version": "1.0.0",
+  "description": "Portfolio et CV professionnel de Philippe Vienne — Architecte Cloud & DevOps",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "start": "node scripts/dev-server.mjs",
+    "build:html": "node scripts/build.mjs",
+    "build:pdf": "node scripts/generate-pdf.mjs",
+    "build": "node scripts/build.mjs && node scripts/generate-pdf.mjs"
+  },
+  "keywords": [
+    "cloud-architect",
+    "devops",
+    "kubernetes",
+    "aws",
+    "gcp",
+    "terraform",
+    "portfolio",
+    "cv-ats"
+  ],
+  "author": "Philippe Vienne <Philippe@Vienne.me>",
+  "license": "MIT",
+  "dependencies": {
+    "marked": "^15.0.7",
+    "yaml": "^2.7.0"
+  }
+}
