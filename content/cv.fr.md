@@ -1,6 +1,6 @@
 ---
 name: "Philippe Vienne"
-title: "Architecte Cloud & DevOps | Ex-Directeur Technique (CTO)"
+title: "Architecte Cloud & DevOps | Ex-Co-fondateur Tech & CTO Startup"
 subtitle: "15 ans d'expérience • Spécialiste Architectures Résilientes, Multi-Cloud, Kubernetes & Environnements Régulés"
 location: "Lyon, France (Hybride / Remote)"
 email: "Philippe@Vienne.me"
@@ -17,8 +17,8 @@ targets:
     tags: ["AWS", "Google Cloud", "Azure", "GenAI", "EKS", "GKE"]
   - id: "consulting-msp"
     title: "Sociétés de Conseil & MSP"
-    desc: "Ex-CTO avec posture conseil, avant-vente, direction d'équipes, pilotage de portefeuille (30 clients, 330 k€) et optimisation FinOps (-15%)."
-    tags: ["Leadership", "FinOps", "Multi-Cloud", "Avant-vente", "Mentoring"]
+    desc: "Culture du conseil et posture pragmatique : vision produit de co-fondateur tech, gestion de portefeuille d'infrastructures (30 clients, 330 k€ chez Skyloud) et FinOps (-15%)."
+    tags: ["Conseil", "FinOps", "Multi-Cloud", "Avant-vente", "Hands-on"]
   - id: "banking-regulated"
     title: "Banques & Secteurs Réglementés"
     desc: "Expérience éprouvée en environnements critiques : Nucléaire (EDF), Aérien (Air France), FinTech OLAP (Singapour), Cloud Souverain (S3NS / SecNumCloud)."
@@ -36,13 +36,13 @@ metrics:
     detail: "Déployés, sécurisés et managés en production multi-cloud"
   - value: "30"
     label: "Clients Cloud"
-    detail: "Portefeuille d'infrastructures géré (budget 330 k€)"
+    detail: "Portefeuille d'infrastructures géré (budget 330 k€ chez Skyloud)"
   - value: "9x"
     label: "Certifications"
     detail: "AWS Solutions Architect Pro, GCP Associate, Terraform Associate, etc."
   - value: "5 ans"
-    label: "Direction Technique"
-    detail: "CTO de startup : R&D, SaaS dev tools, pilotage produit et équipe"
+    label: "Co-fondateur Tech"
+    detail: "Startup Smartfire : profil technique des deux fondateurs, conception du SaaS de 0 à 1"
 
 certifications:
   - name: "Google Cloud Certified – Associate Cloud Engineer"
@@ -118,7 +118,7 @@ skills_categories:
   - category: "Développement & R&D"
     skills: ["TypeScript", "JavaScript", "Java (Spring, OLAP, JavaFX)", "React.js", "Ruby on Rails", "APIs REST", "PostGIS / MapLibre / SIG", "Repackaging Web VSCode"]
   - category: "Gouvernance & Méthodologies"
-    skills: ["Architecture Cloud Grande Échelle", "FinOps & Réduction des coûts (-15%)", "Sécurité By Design & DevSecOps", "Secteurs Réglementés (Nucléaire, Aérien, Banque)", "Direction Technique (CTO)", "Satisfaction & Accompagnement Client"]
+    skills: ["Architecture Cloud Grande Échelle", "FinOps & Réduction des coûts (-15%)", "Sécurité By Design & DevSecOps", "Secteurs Réglementés (Nucléaire, Aérien, Banque)", "Co-fondateur Technique Startup", "Satisfaction & Accompagnement Client"]
 
 languages:
   - name: "Français"
@@ -146,13 +146,13 @@ education:
 
 # Profil Professionnel
 
-Architecte Cloud & DevOps chevronné et ancien Directeur Technique (CTO) de startup, combinant **15 ans d'expertise technique et d'ingénierie logicielle** (diplômé INSA Lyon). 
+Architecte Cloud & DevOps chevronné et ancien co-fondateur technique (CTO) de startup, combinant **15 ans d'expertise technique et d'ingénierie logicielle** (diplômé Ingénieur INSA Lyon). 
 
 Spécialiste de la conception et du déploiement d'architectures cloud-native hautement résilientes, sécurisées et élastiques (AWS, GCP, Azure, OpenShift, Kubernetes, Terraform). Fort d'un track-record éprouvé dans des environnements à très forts enjeux :
 - **Secteur nucléaire régulé** (EDF) : migration critique vers OpenShift CaaS, gouvernance multi-cloud avec le cloud souverain S3NS.
 - **Secteur aérien** (Air France / Atos) : déploiement Kubernetes en datacenter privé.
 - **FinTech & Trading bancaire** (ActiveViam à Singapour) : automatisation CI/CD sur base de données OLAP in-memory.
-- **Scale & E-commerce** (Skyloud, Smartfire) : gestion de 100+ clusters K8s, +300% de performance, -15% de coûts cloud, repackaging web d'outils de développement.
+- **Scale, E-commerce & Startup R&D** (Skyloud, Smartfire) : gestion de 100+ clusters K8s, +300% de performance, -15% de coûts cloud, conception d'un produit SaaS de 0 à 1 et repackaging web de VSCode.
 
 Praticien certifié AWS (Solutions Architect Professional, Developer, CloudOps, AI Practitioner), Google Cloud (Associate Cloud Engineer) et HashiCorp (Terraform Associate).
 
@@ -200,15 +200,15 @@ Praticien certifié AWS (Solutions Architect Professional, Developer, CloudOps, 
 
 ---
 
-### Smartfire — Directeur Technique (CTO) / Head of Engineering
+### Smartfire — Co-fondateur Technique & CTO (Startup)
 **Période :** Février 2019 - Août 2023 (4 ans 7 mois) | **Lieu :** Lyon, France  
-*Direction technique, stratégie produit et pilotage de l'équipe R&D pendant près de 5 ans au sein d'une startup technologique innovante.*
+*Piliers technique au sein d'une équipe de deux co-fondateurs pendant près de 5 ans : conception intégrale du produit SaaS, R&D outillage dev, développement full-stack et hébergement cloud.*
 
-- **Conception SaaS Cloud-Native :** Architecture et développement de bout en bout d'une plateforme SaaS novatrice d'orchestration et gestion d'environnements de développement cloud éphémères.
+- **Conception SaaS Cloud-Native (0 à 1) :** Architecture et développement complet d'une plateforme SaaS d'environnements de développement cloud éphémères (Java, Kubernetes, OpenStack, TypeScript).
 - **R&D Avancée & Deep Tech :** Repackaging complet de Microsoft Visual Studio Code pour distribution et exécution dans un navigateur web (Cloud IDE conteneurisé).
-- **Écosystème Frontend & CMS :** Développement de bibliothèques JavaScript haute performance pour WordPress avec refonte complète en React.js.
+- **Écosystème Frontend & CMS :** Développement de bibliothèques JavaScript modernes pour WordPress avec refonte complète en React.js.
 - **Hébergement Haute Charge :** Architecture et infogérance d'infrastructures d'hébergement pour plateformes e-commerce à très fort trafic (AWS, OVHcloud).
-- **Transformation Cloud :** Accompagnement global de l'entreprise et formation des ingénieurs à l'adoption native de Kubernetes, Docker et du Cloud.
+- **Adoption Cloud & Veille :** Choix technologiques structurants, formation et accompagnement dans l'adoption native de Kubernetes, Docker et du Cloud.
 - **Technologies :** Kubernetes, Java, OpenStack, TypeScript, React.js, VSCode Web, AWS, OVHcloud, Docker, CI/CD.
 
 ---

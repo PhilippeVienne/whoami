@@ -50,8 +50,8 @@ export function renderAtsPage({ data, lang = 'fr', inlinedCss = '' }) {
     <h2 class="ats-section-title">${t.titleSummary}</h2>
     <p class="ats-summary">
       ${isEn
-        ? 'Accomplished Cloud & DevOps Solutions Architect and former Startup CTO with <strong>15 years of software engineering and cloud infrastructure expertise</strong> (M.Sc. in Engineering, INSA Lyon). Specialist in high-availability, fault-tolerant multi-cloud environments (AWS, GCP, Azure, OpenShift, Kubernetes, Terraform). Proven track record delivering mission-critical platforms across heavily regulated industries (Nuclear at EDF, Aviation at Air France, Banking/FinTech at ActiveViam Singapore, and French Sovereign Cloud S3NS). Multi-certified AWS (Solutions Architect Professional, Developer, CloudOps, AI Practitioner), Google Cloud (Associate Cloud Engineer), and HashiCorp (Terraform Associate).'
-        : 'Architecte Cloud & DevOps chevronné et ancien Directeur Technique (CTO) de startup, fort de <strong>15 ans d\'expérience en ingénierie logicielle et infrastructure cloud</strong> (Diplômé Ingénieur INSA Lyon). Spécialiste de la résilience, de la haute disponibilité et de l\'automatisation multi-cloud (AWS, GCP, Azure, OpenShift, Kubernetes, Terraform). Track-record confirmé dans des secteurs hautement critiques et réglementés : nucléaire (EDF), secteur aérien (Air France), FinTech bancaire (ActiveViam à Singapour) et cloud souverain (S3NS). Multi-certifié AWS (Solutions Architect Professional, Developer, CloudOps, AI Practitioner), Google Cloud (Associate Cloud Engineer) et HashiCorp (Terraform Associate).'}
+        ? 'Accomplished Cloud & DevOps Solutions Architect and former Startup Technical Co-Founder (CTO) with <strong>15 years of software engineering and cloud infrastructure expertise</strong> (M.Sc. in Engineering, INSA Lyon). Specialist in high-availability, fault-tolerant multi-cloud environments (AWS, GCP, Azure, OpenShift, Kubernetes, Terraform). Proven track record delivering mission-critical platforms across heavily regulated industries (Nuclear at EDF, Aviation at Air France, Banking/FinTech at ActiveViam Singapore, and French Sovereign Cloud S3NS). Multi-certified AWS (Solutions Architect Professional, Developer, CloudOps, AI Practitioner), Google Cloud (Associate Cloud Engineer), and HashiCorp (Terraform Associate).'
+        : 'Architecte Cloud & DevOps chevronné et ancien co-fondateur technique (CTO) de startup, fort de <strong>15 ans d\'expérience en ingénierie logicielle et infrastructure cloud</strong> (Diplômé Ingénieur INSA Lyon). Spécialiste de la résilience, de la haute disponibilité et de l\'automatisation multi-cloud (AWS, GCP, Azure, OpenShift, Kubernetes, Terraform). Track-record confirmé dans des secteurs hautement critiques et réglementés : nucléaire (EDF), secteur aérien (Air France), FinTech bancaire (ActiveViam à Singapour) et cloud souverain (S3NS). Multi-certifié AWS (Solutions Architect Professional, Developer, CloudOps, AI Practitioner), Google Cloud (Associate Cloud Engineer) et HashiCorp (Terraform Associate).'}
     </p>
   </section>
 
@@ -146,11 +146,11 @@ export function renderAtsPage({ data, lang = 'fr', inlinedCss = '' }) {
     <!-- Smartfire -->
     <div class="ats-item">
       <div class="ats-item-header">
-        <span class="ats-item-title">${isEn ? 'Chief Technical Officer (CTO) / Head of R&D' : 'Directeur Technique (CTO) / Direction R&D'} — Smartfire</span>
+        <span class="ats-item-title">${isEn ? 'Technical Co-Founder & CTO (Startup)' : 'Co-fondateur Technique & CTO (Startup)'} — Smartfire</span>
         <span class="ats-item-date">${isEn ? 'Feb. 2019 – Aug. 2023 (4 yrs 7 mos)' : 'Févr. 2019 – Août 2023 (4 ans 7 mois)'}</span>
       </div>
       <div class="ats-item-subtitle">
-        <span>${isEn ? 'Startup Technical Direction & Software Engineering' : 'Direction technique de startup innovante & R&D'}</span>
+        <span>${isEn ? 'Technical pillar in a 2-person founding team • SaaS Product & R&D' : 'Pilier technique au sein d\'une startup de 2 co-fondateurs • Conception produit & R&D'}</span>
         <span class="ats-item-location">Lyon, France</span>
       </div>
       <ul class="ats-list">

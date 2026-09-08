@@ -1,6 +1,6 @@
 ---
 name: "Philippe Vienne"
-title: "Cloud & DevOps Solutions Architect | Former Startup CTO"
+title: "Cloud & DevOps Solutions Architect | Former Startup Technical Co-Founder & CTO"
 subtitle: "15 Years Experience • Specialist in Resilient Multi-Cloud Architectures, Kubernetes & Regulated Environments"
 location: "Lyon, France (Hybrid / Remote)"
 email: "Philippe@Vienne.me"
@@ -17,8 +17,8 @@ targets:
     tags: ["AWS", "Google Cloud", "Azure", "GenAI", "EKS", "GKE"]
   - id: "consulting-msp"
     title: "Consulting Firms & MSPs"
-    desc: "Former CTO with consulting posture, technical presales, team leadership, managing a portfolio of 30 clients (€330k budget), and FinOps optimization (-15%)."
-    tags: ["Leadership", "FinOps", "Multi-Cloud", "Presales", "Mentoring"]
+    desc: "Pragmatic consulting culture: technical co-founder product vision, cloud portfolio operations (30 clients, €330k budget at Skyloud), and FinOps (-15%)."
+    tags: ["Advisory", "FinOps", "Multi-Cloud", "Presales", "Hands-on"]
   - id: "banking-regulated"
     title: "Banking & Regulated Sectors"
     desc: "Proven track record in high-stakes environments: Nuclear (EDF), Aviation (Air France), In-Memory FinTech OLAP (Singapore), Sovereign Cloud (S3NS / SecNumCloud)."
@@ -36,13 +36,13 @@ metrics:
     detail: "Designed, secured, and operated in multi-cloud production"
   - value: "30"
     label: "Cloud Clients"
-    detail: "Directly managed infrastructure portfolio (€330k budget)"
+    detail: "Directly managed infrastructure portfolio (€330k budget at Skyloud)"
   - value: "9x"
     label: "Certifications"
     detail: "AWS Solutions Architect Pro, GCP Associate, Terraform Associate, etc."
   - value: "5 Years"
-    label: "CTO Leadership"
-    detail: "Startup CTO: R&D, SaaS dev tools, product engineering & team growth"
+    label: "Startup Co-Founder"
+    detail: "Smartfire startup: technical pillar of 2 founders, built SaaS product 0 to 1"
 
 certifications:
   - name: "Google Cloud Certified – Associate Cloud Engineer"
@@ -118,7 +118,7 @@ skills_categories:
   - category: "Software Engineering & R&D"
     skills: ["TypeScript", "JavaScript", "Java (Spring, In-Memory OLAP, JavaFX)", "React.js", "Ruby on Rails", "REST APIs", "PostGIS / MapLibre / GIS", "VSCode Web Repackaging"]
   - category: "Governance & Methodologies"
-    skills: ["Large-Scale Cloud Architecture", "FinOps & Cost Reduction (-15%)", "Security by Design & DevSecOps", "Regulated Sectors (Nuclear, Aviation, Banking)", "CTO Leadership", "Client Presales & Advisory"]
+    skills: ["Large-Scale Cloud Architecture", "FinOps & Cost Reduction (-15%)", "Security by Design & DevSecOps", "Regulated Sectors (Nuclear, Aviation, Banking)", "Technical Co-Founder (Startup)", "Client Advisory & Presales"]
 
 languages:
   - name: "French"
@@ -146,13 +146,13 @@ education:
 
 # Professional Summary
 
-Accomplished Cloud & DevOps Solutions Architect and former Startup CTO with **15 years of technical expertise and software engineering rigor** (INSA Lyon Engineering Graduate).
+Accomplished Cloud & DevOps Solutions Architect and former Startup Technical Co-Founder (CTO) with **15 years of technical expertise and software engineering rigor** (INSA Lyon Engineering Graduate).
 
 Specialized in the design, automation, and operation of highly resilient, secure, and elastic cloud-native architectures (AWS, GCP, Azure, OpenShift, Kubernetes, Terraform). Proven track record delivering mission-critical platforms across heavily regulated and high-demand industries:
 - **Regulated Nuclear Sector** (EDF): Mission-critical migration to OpenShift CaaS, multi-cloud governance integrated with French sovereign cloud S3NS.
 - **Aviation Sector** (Air France / Atos): Enterprise Kubernetes deployment across private datacenter infrastructure.
 - **FinTech & Banking Analytics** (ActiveViam Singapore): CI/CD architecture for distributed in-memory OLAP database engines.
-- **Scale & E-commerce** (Skyloud, Smartfire): 100+ Kubernetes clusters operated, +300% performance gain, -15% cloud spend, deep R&D web repackaging of developer tools.
+- **Scale, E-commerce & Startup R&D** (Skyloud, Smartfire): 100+ Kubernetes clusters operated, +300% performance gain, -15% cloud spend, building a SaaS product 0 to 1, and in-browser VSCode repackaging.
 
 Multi-certified: AWS (Solutions Architect Professional, Developer, CloudOps, AI Practitioner), Google Cloud (Associate Cloud Engineer), and HashiCorp (Terraform Associate).
 
@@ -200,15 +200,15 @@ Multi-certified: AWS (Solutions Architect Professional, Developer, CloudOps, AI 
 
 ---
 
-### Smartfire — Chief Technical Officer (CTO) / Head of Engineering
+### Smartfire — Technical Co-Founder & CTO (Startup)
 **Duration:** February 2019 - August 2023 (4 years 7 months) | **Location:** Lyon, France  
-*Led technical strategy, R&D initiatives, and engineering teams for nearly 5 years at an innovative technology startup.*
+*Technical pillar within a 2-person founding team for nearly 5 years: full SaaS platform development, hands-on developer tooling R&D, full-stack dev, and cloud hosting.*
 
-- **Cloud-Native SaaS Product:** Architected and engineered from the ground up a SaaS platform for automated, ephemeral cloud-based development environments.
-- **Advanced R&D:** Deep repackaging of Microsoft Visual Studio Code for high-performance in-browser web execution (containerized cloud IDE).
-- **Frontend Ecosystem & WordPress:** Built modern JavaScript libraries and engineered full-featured React.js applications for enterprise headless CMS integrations.
+- **Cloud-Native SaaS Product (0 to 1):** Architected and engineered from the ground up an ephemeral cloud development environment platform (Java, Kubernetes, OpenStack, TypeScript).
+- **Hands-on Deep Tech R&D:** Repackaged Microsoft Visual Studio Code for high-performance in-browser web execution (containerized cloud IDE).
+- **Web Engineering & Frontend:** Built modern JavaScript libraries and engineered full-featured React.js applications for headless CMS integrations.
 - **High-Traffic Cloud Hosting:** Designed and operated resilient cloud infrastructure handling high-traffic e-commerce operations (AWS, OVHcloud).
-- **Cloud Mentorship:** Trained and guided development teams in adopting native Docker, Kubernetes, and modern cloud deployment paradigms.
+- **Cloud Adoption:** Drove technical decisions and hands-on container adoption (Docker, Kubernetes, CI/CD).
 - **Technologies:** Kubernetes, Java, OpenStack, TypeScript, React.js, VSCode Web, AWS, OVHcloud, Docker, CI/CD.
 
 ---

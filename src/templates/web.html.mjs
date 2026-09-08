@@ -19,8 +19,8 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
     targetsTag: isEn ? 'Value Proposition & Alignment' : 'Positionnement Stratégique',
     targetsTitle: isEn ? 'Target Sectors & Alignment' : 'Pourquoi me confier vos architectures critiques ?',
     targetsSub: isEn 
-      ? 'An engineering and leadership profile designed for high-scale, compliance-driven, and transformative cloud missions.'
-      : 'Un profil à l\'intersection du conseil de haut niveau, de la direction technique et de l\'ingénierie cloud de pointe.',
+      ? 'An engineering and pragmatic co-founder profile designed for high-scale, compliance-driven, and transformative cloud missions.'
+      : 'Un profil à l\'intersection du conseil de haut niveau, de l\'agilité de co-fondateur tech et de l\'ingénierie cloud de pointe.',
     certsTag: isEn ? 'Verified Credentials' : 'Certifications Validées',
     certsTitle: isEn ? 'Cloud & Architecture Certifications' : 'Certifications Officielles Cloud & DevOps',
     certsSub: isEn
@@ -28,7 +28,7 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
       : 'Expertise multi-cloud reconnue et certifiée par les éditeurs de référence (AWS, Google Cloud, HashiCorp).',
     filterAll: isEn ? 'All Experiences' : 'Toutes les expériences',
     filterCloud: isEn ? 'Cloud & Platforms' : 'Cloud & Plateformes',
-    filterCto: isEn ? 'CTO & Startup Leadership' : 'Direction Technique (CTO)',
+    filterCto: isEn ? 'Startup & Co-Founder' : 'Startup & Co-fondateur',
     filterRegulated: isEn ? 'Regulated & Banking' : 'Secteurs Réglementés & Banques',
     skillsTag: isEn ? 'Technical Expertise' : 'Savoir-Faire Technique',
     skillsTitle: isEn ? 'Technical & Architectural Skills' : 'Compétences Techniques & Méthodologiques',
@@ -505,7 +505,7 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
         <article class="exp-card" data-category="cto">
           <div class="exp-header">
             <div class="exp-role-group">
-              <h3 class="exp-role">${isEn ? 'Chief Technical Officer (CTO) / Head of R&D' : 'Directeur Technique (CTO) / Direction R&D'}</h3>
+              <h3 class="exp-role">${isEn ? 'Technical Co-Founder & CTO (Startup)' : 'Co-fondateur Technique & CTO (Startup)'}</h3>
               <div class="exp-company">Smartfire</div>
             </div>
             <div class="exp-meta">
@@ -516,8 +516,8 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
 
           <p style="color: var(--text-secondary); margin-bottom: 0.75rem;">
             ${isEn
-              ? 'Executive technical leadership and R&D director in an innovative tech startup for nearly 5 years.'
-              : 'Direction technique et R&D au sein d\'une startup tech innovante pendant près de 5 ans.'}
+              ? 'Technical pillar of a 2-person founding team: end-to-end cloud-native SaaS engineering, developer tools R&D, full-stack dev, and cloud hosting.'
+              : 'Pilier technique au sein d\'une équipe de deux co-fondateurs : conception intégrale du produit SaaS, R&D outillage dev, développement full-stack et hébergement cloud.'}
           </p>
 
           <ul class="exp-bullets">
