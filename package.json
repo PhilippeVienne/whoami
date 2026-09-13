@@ -21,7 +21,7 @@
     "cv-ats"
   ],
   "author": "Philippe Vienne <Philippe@Vienne.me>",
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "dependencies": {
     "marked": "^15.0.7",
     "yaml": "^2.7.0"

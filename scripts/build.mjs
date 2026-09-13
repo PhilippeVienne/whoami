@@ -58,9 +58,12 @@ export async function build() {
   fs.copyFileSync(path.join(rootDir, 'src', 'js', 'app.js'), path.join(distDir, 'app.js'));
   copyDirRecursive(path.join(rootDir, 'public'), distDir);
 
-  // Copie des fichiers Markdown sources vers dist pour téléchargement / consultation directe
+  // Copie des fichiers Markdown sources et de la licence vers dist pour téléchargement / consultation directe
   fs.copyFileSync(path.join(rootDir, 'content', 'cv.fr.md'), path.join(distDir, 'cv.fr.md'));
   fs.copyFileSync(path.join(rootDir, 'content', 'cv.en.md'), path.join(distDir, 'cv.en.md'));
+  if (fs.existsSync(path.join(rootDir, 'LICENSE.md'))) {
+    fs.copyFileSync(path.join(rootDir, 'LICENSE.md'), path.join(distDir, 'LICENSE.md'));
+  }
 
   // CNAME et .nojekyll pour GitHub Pages
   fs.writeFileSync(path.join(distDir, 'CNAME'), 'philippe.vienne.me\n', 'utf-8');

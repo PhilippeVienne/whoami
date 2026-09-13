@@ -9,6 +9,7 @@ linkedin: "https://www.linkedin.com/in/pvienne/"
 github: "https://github.com/PhilippeVienne"
 years_experience: 15
 degree: "M.Sc. in Engineering — INSA Lyon (Telecommunications & Distributed Systems)"
+license: "CC BY-SA 4.0 (excl. profile photo under private rights and third-party logos)"
 
 targets:
   - id: "cloud-providers"
@@ -254,3 +255,10 @@ Multi-certified: AWS (Solutions Architect Professional, Developer, CloudOps, AI 
 **Duration:** June 2013 - September 2013 (4 months) | **Location:** Sophia Antipolis, France  
 - Developed a desktop graphical tool in JavaFX to ingest, analyze, and visualize scientific environmental data from subterranean cave sensors.
 - **Technologies:** Java, JavaFX, Scientific Data Visualization.
+
+---
+
+> **License & Rights:**  
+> The textual content of this resume is licensed under [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).  
+> *Exceptions:* Profile photograph remains under strictly private rights (exclusive property of Philippe Vienne). Cited third-party trademarks and logos are the property of their respective owners.
+

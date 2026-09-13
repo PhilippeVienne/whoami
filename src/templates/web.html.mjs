@@ -42,6 +42,9 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
     copyBtn: isEn ? 'Copy Markdown to Clipboard' : 'Copier le Markdown',
     closeBtn: isEn ? 'Close' : 'Fermer',
     footerNote: isEn ? 'Single source of truth in Markdown • Hosted on GitHub Pages' : 'Source unique en Markdown • Hébergé sur GitHub Pages',
+    footerLicense: isEn 
+      ? 'Generator: AGPLv3 • Content: CC BY-SA 4.0 (excl. photo & third-party logos)' 
+      : 'Générateur : AGPLv3 • Contenu : CC BY-SA 4.0 (hors photo & logos tiers)',
     pdfFile: isEn ? 'Philippe_Vienne_CV_EN.pdf' : 'Philippe_Vienne_CV_FR.pdf',
     pdfAltFile: isEn ? 'Philippe_Vienne_CV_FR.pdf' : 'Philippe_Vienne_CV_EN.pdf',
     pdfAltLabel: isEn ? 'French PDF' : 'English PDF',
@@ -828,6 +831,9 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
       <div>
         <strong>${data.name}</strong> — ${data.title}
         <div class="footer-source-note">${t.footerNote}</div>
+        <div class="footer-source-note" style="margin-top: 0.25rem;">
+          <a href="${relBase}/LICENSE.md" target="_blank" style="color: inherit; text-decoration: underline;">${t.footerLicense}</a>
+        </div>
       </div>
       <div style="display: flex; gap: 1rem; align-items: center;">
         <a href="${relBase}/cv.${lang}.md" target="_blank" style="color: var(--eu-blue);">

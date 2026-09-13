@@ -87,6 +87,7 @@ whoami/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml    # Workflow CI/CD GitHub Pages
+├── LICENSE.md            # Conditions de licence (AGPLv3 & CC BY-SA 4.0)
 ├── package.json
 └── README.md
 ```
@@ -99,3 +100,15 @@ Pour mettre à jour une expérience, ajouter une certification ou modifier vos c
 1. Modifiez simplement `content/cv.fr.md` (et `content/cv.en.md`).
 2. Exécutez `npm run build` (ou poussez sur `main` si GitHub Actions est actif).
 3. Le site web, les fichiers Markdown bruts et les versions PDF ATS sont automatiquement recalculés !
+
+---
+
+## 📄 Licences & Droits
+
+Ce projet applique un modèle de licence dual précisé dans [`LICENSE.md`](./LICENSE.md) :
+
+- **Moteur & Générateur de code** : [GNU AGPLv3](https://www.gnu.org/licenses/agpl-3.0.html) (`scripts/`, `src/`, templates, CSS, JS).
+- **Contenu & Données du CV** : [Creative Commons BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr) (`content/cv.fr.md`, `content/cv.en.md`).
+- **Exceptions et réserves expresses** :
+  - **Photo de profil** (`avatar.png`) : Reste sous **droit entièrement privé** (propriété exclusive de Philippe Vienne, tous droits réservés).
+  - **Logos & Marques tiers** : Demeurent la **propriété respective de leurs titulaires légaux** (utilisés uniquement à des fins d'identification factuelle du parcours professionnel).

@@ -9,6 +9,7 @@ linkedin: "https://www.linkedin.com/in/pvienne/"
 github: "https://github.com/PhilippeVienne"
 years_experience: 15
 degree: "Ingénieur INSA Lyon (Télécoms)"
+license: "CC BY-SA 4.0 (hors photo de profil de droit privé et logos tiers)"
 
 targets:
   - id: "cloud-providers"
@@ -254,3 +255,10 @@ Praticien certifié AWS (Solutions Architect Professional, Developer, CloudOps, 
 **Période :** Juin 2013 - Septembre 2013 (4 mois) | **Lieu :** Sophia Antipolis, France  
 - Conception d'un logiciel graphique sous JavaFX pour l'acquisition, le traitement et la visualisation de données scientifiques provenant de capteurs installés en cavités souterraines.
 - **Technologies :** Java, JavaFX, Traitement de données scientifiques.
+
+---
+
+> **Licence & Droits :**  
+> Le contenu textuel de ce CV est sous licence [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr).  
+> *Exceptions :* La photo de profil reste sous droit entièrement privé (propriété exclusive de Philippe Vienne). Les marques et logos cités appartiennent à leurs propriétaires respectifs.
+
