@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 import YAML from 'yaml';
 import { renderWebPage } from '../src/templates/web.html.mjs';
 import { renderAtsPage } from '../src/templates/ats.html.mjs';
+import { renderJsonResume } from '../src/templates/json-resume.mjs';
+import { renderLlmsTxt, renderLlmsFullTxt } from '../src/templates/llms.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -108,7 +110,30 @@ export async function build() {
   });
   fs.writeFileSync(path.join(distDir, 'ats-en.html'), atsEn, 'utf-8');
 
-  console.log('✅ Pages HTML & assets générés avec succès dans dist/');
+  // Génération des standards de données Machine-Readable
+  // 5. JSON Resume (v1.0.0 standard) - Version Française (racine)
+  const jsonResumeFr = renderJsonResume({ data: frSource.data, lang: 'fr' });
+  fs.writeFileSync(path.join(distDir, 'resume.json'), jsonResumeFr, 'utf-8');
+
+  // 6. JSON Resume (v1.0.0 standard) - Version Anglaise (/en/)
+  const jsonResumeEn = renderJsonResume({ data: enSource.data, lang: 'en' });
+  fs.writeFileSync(path.join(distDir, 'en', 'resume.json'), jsonResumeEn, 'utf-8');
+
+  // 7. llms.txt & llms-full.txt (Standard pour crawlers IA et LLM)
+  const llmsTxt = renderLlmsTxt({
+    data: frSource.data,
+    frRaw: frSource.rawContent,
+    enRaw: enSource.rawContent
+  });
+  fs.writeFileSync(path.join(distDir, 'llms.txt'), llmsTxt, 'utf-8');
+
+  const llmsFullTxt = renderLlmsFullTxt({
+    frRaw: frSource.rawContent,
+    enRaw: enSource.rawContent
+  });
+  fs.writeFileSync(path.join(distDir, 'llms-full.txt'), llmsFullTxt, 'utf-8');
+
+  console.log('✅ Pages HTML, JSON Resume (v1.0.0) & llms.txt générés avec succès dans dist/');
 }
 
 // Exécution directe si invoqué via CLI

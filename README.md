@@ -4,6 +4,8 @@ Site de présentation et CV professionnel pour **Philippe Vienne** — Architect
 
 - 🌐 **Site Web en production** : [https://philippe.vienne.me](https://philippe.vienne.me)
 - 📄 **Source de vérité unique** : [`content/cv.fr.md`](./content/cv.fr.md) & [`content/cv.en.md`](./content/cv.en.md)
+- ⚡ **Standard JSON Resume (v1.0.0)** : [`https://philippe.vienne.me/resume.json`](https://philippe.vienne.me/resume.json)
+- 🤖 **Standard IA llms.txt** : [`https://philippe.vienne.me/llms.txt`](https://philippe.vienne.me/llms.txt)
 - 🖨️ **Version PDF ATS** : Générée automatiquement lors du build en 2 pages optimisées (FR & EN).
 
 ---
@@ -14,17 +16,23 @@ Site de présentation et CV professionnel pour **Philippe Vienne** — Architect
    - Toutes les données professionnelles (expériences, missions EDF/Skyloud/Smartfire, certifications AWS/GCP/Terraform, chiffres clés) sont rédigées dans `content/cv.fr.md` et `content/cv.en.md`.
    - Les fichiers bruts sont directement téléchargeables ou exploitables par des LLM (ChatGPT, Claude, Gemini) via un bouton dédié sur le site.
 
-2. **Design « Bleu Europe & Confiance » :**
+2. **Standards Web & Formats Machine-Readable (ATS & IA) :**
+   - **JSON Resume v1.0.0 standard** : Généré automatiquement à la racine (`/resume.json` en français et `/en/resume.json` en anglais) avec lien `<link rel="alternate" type="application/json">` dans le `<head>`.
+   - **Schema.org / JSON-LD enrichi** : Type `Person` complet intégrant l'ensemble des certifications Credly via `hasCredential` (`EducationalOccupationalCredential`), la formation INSA Lyon (`alumniOf`), et la taxonomie complète des compétences (`knowsAbout`).
+   - **Microformats2 (`h-resume`, `h-card`)** : Intégrés sémantiquement dans les templates ATS pour extraction directe par les scrapers web sans casser le layout.
+   - **Standard `llms.txt` & `llms-full.txt`** : Point d'entrée standardisé à la racine pour les agents autonomes et crawlers d'IA.
+
+3. **Design « Bleu Europe & Confiance » :**
    - Palette institutionnelle inspirée du bleu Reflex Blue européen (`#003399`) et touches d'or (`#FFCC00`), transmettant autorité, rigueur d'ingénierie et fiabilité pour les secteurs régulés (Nucléaire EDF, Secteur Aérien Air France, Cloud Souverain S3NS, FinTech bancaire à Singapour).
    - Mode clair et mode sombre intégrés avec détection automatique des préférences système et persistance `localStorage`.
    - Filtres interactifs par secteur d'activité (Cloud, CTO, Secteurs réglementés).
 
-3. **Génération PDF ATS ultra-rigoureuse :**
+4. **Génération PDF ATS ultra-rigoureuse :**
    - Rendu en exactement **2 pages calibrées** (standard international pour profils seniors).
    - Hiérarchie sémantique pure (`H1`, `H2`, listes à puces simples), polices standard sans empattement, flux de texte continu, 100% extractible par les moteurs ATS (Workday, Taleo, Greenhouse, Lever, etc.).
    - Génération automatisée en local et en CI GitHub Actions via Google Chrome Headless (`--print-to-pdf`).
 
-4. **Déploiement GitHub Pages & Domaine Personnalisé :**
+5. **Déploiement GitHub Pages & Domaine Personnalisé :**
    - Fichier `CNAME` (`philippe.vienne.me`) et `.nojekyll` créés automatiquement dans `dist/`.
    - Workflow GitHub Actions prêt pour déploiement direct à chaque commit sur `main`.
 
@@ -90,8 +98,10 @@ whoami/
 │   ├── js/
 │   │   └── app.js        # Filtres, toggle thème, modal Markdown, toast
 │   └── templates/
-│       ├── web.html.mjs  # Template HTML du portfolio interactif
-│       └── ats.html.mjs  # Template HTML de la version ATS
+│       ├── web.html.mjs      # Template HTML du portfolio interactif
+│       ├── ats.html.mjs      # Template HTML de la version ATS (microformats2)
+│       ├── json-resume.mjs   # Générateur standard JSON Resume v1.0.0
+│       └── llms.mjs          # Générateur standard llms.txt & llms-full.txt
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml    # Workflow CI/CD GitHub Pages

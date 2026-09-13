@@ -24,31 +24,33 @@ export function renderAtsPage({ data, lang = 'fr', inlinedCss = '' }) {
   <meta charset="UTF-8">
   <title>${data.name} — CV ${isEn ? 'English' : 'Français'} (ATS Compatible)</title>
   <meta name="robots" content="noindex, nofollow">
+  <link rel="alternate" type="application/json" href="${isEn ? 'en/resume.json' : 'resume.json'}" title="JSON Resume">
+  <link rel="alternate" type="text/markdown" href="${isEn ? 'cv.en.md' : 'cv.fr.md'}" title="Markdown Source">
   ${inlinedCss ? `<style>${inlinedCss}</style>` : `<link rel="stylesheet" href="ats.css">`}
 </head>
-<body>
+<body class="h-resume">
 
   <!-- Header ATS -->
-  <header class="ats-header">
-    <h1 class="ats-name">${data.name}</h1>
-    <div class="ats-title">${data.title}</div>
+  <header class="ats-header h-card">
+    <h1 class="ats-name p-name">${data.name}</h1>
+    <div class="ats-title p-job-title">${data.title}</div>
     <div class="ats-contact-bar">
-      <span>${data.location}</span>
+      <span class="p-locality">${data.location}</span>
       <span>•</span>
-      <span><a href="mailto:${data.email}">${data.email}</a></span>
+      <span><a class="u-email" href="mailto:${data.email}">${data.email}</a></span>
       <span>•</span>
-      <span><a href="${data.website}">${data.website.replace('https://', '')}</a></span>
+      <span><a class="u-url" href="${data.website}">${data.website.replace('https://', '')}</a></span>
       <span>•</span>
-      <span><a href="${data.linkedin}">linkedin.com/in/pvienne</a></span>
+      <span><a class="u-url" href="${data.linkedin}">linkedin.com/in/pvienne</a></span>
       <span>•</span>
-      <span><a href="${data.github}">github.com/PhilippeVienne</a></span>
+      <span><a class="u-url" href="${data.github}">github.com/PhilippeVienne</a></span>
     </div>
   </header>
 
   <!-- Summary -->
   <section class="ats-section">
     <h2 class="ats-section-title">${t.titleSummary}</h2>
-    <p class="ats-summary">
+    <p class="ats-summary p-summary">
       ${isEn
         ? 'Accomplished Cloud & DevOps Solutions Architect and former Startup Technical Co-Founder (CTO) with <strong>15 years of software engineering and cloud infrastructure expertise</strong> (M.Sc. in Engineering, INSA Lyon). Specialist in high-availability, fault-tolerant multi-cloud environments (AWS, GCP, Azure, OpenShift, Kubernetes, Terraform). Proven track record delivering mission-critical platforms across heavily regulated industries (Nuclear at EDF, Aviation at Air France, Banking/FinTech at ActiveViam Singapore, and French Sovereign Cloud S3NS). Multi-certified AWS (Solutions Architect Professional, Developer, CloudOps, AI Practitioner), Google Cloud (Associate Cloud Engineer), and HashiCorp (Terraform Associate).'
         : 'Architecte Cloud & DevOps chevronné et ancien co-fondateur technique (CTO) de startup, fort de <strong>15 ans d\'expérience en ingénierie logicielle et infrastructure cloud</strong> (Diplômé Ingénieur INSA Lyon). Spécialiste de la résilience, de la haute disponibilité et de l\'automatisation multi-cloud (AWS, GCP, Azure, OpenShift, Kubernetes, Terraform). Track-record confirmé dans des secteurs hautement critiques et réglementés : nucléaire (EDF), secteur aérien (Air France), FinTech bancaire (ActiveViam à Singapour) et cloud souverain (S3NS). Multi-certifié AWS (Solutions Architect Professional, Developer, CloudOps, AI Practitioner), Google Cloud (Associate Cloud Engineer) et HashiCorp (Terraform Associate).'}
@@ -242,7 +244,7 @@ export function renderAtsPage({ data, lang = 'fr', inlinedCss = '' }) {
   <section class="ats-section">
     <h2 class="ats-section-title">${t.titleSkills}</h2>
     ${(data.skills_categories || []).map(cat => `
-      <div class="ats-skill-group">
+      <div class="ats-skill-group p-skill">
         <strong>${cat.category} :</strong> ${(cat.skills || []).join(', ')}
       </div>
     `).join('')}
@@ -252,9 +254,9 @@ export function renderAtsPage({ data, lang = 'fr', inlinedCss = '' }) {
   <section class="ats-section">
     <h2 class="ats-section-title">${t.titleEdu}</h2>
     ${(data.education || []).map(edu => `
-      <div class="ats-item" style="margin-bottom: 4pt;">
+      <div class="ats-item p-education" style="margin-bottom: 4pt;">
         <div class="ats-item-header">
-          <span class="ats-item-title">${edu.degree} — ${edu.institution}</span>
+          <span class="ats-item-title p-name">${edu.degree} — ${edu.institution}</span>
           <span class="ats-item-date">${edu.period}</span>
         </div>
         <div class="ats-item-subtitle">

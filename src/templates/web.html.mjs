@@ -59,6 +59,51 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
   const frUrl = isEn ? '../' : './';
   const enUrl = isEn ? './' : './en/';
 
+  const allSkills = (data.skills_categories || []).flatMap(c => c.skills || []);
+
+  const jsonLdData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": data.name,
+    "jobTitle": data.title,
+    "description": data.subtitle,
+    "url": data.website,
+    "image": `${data.website}/avatar.png`,
+    "email": `mailto:${data.email}`,
+    "sameAs": [
+      data.linkedin,
+      data.github,
+      "https://www.credly.com/users/philippe-vienne"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lyon",
+      "addressCountry": "France"
+    },
+    "alumniOf": (data.education || []).map(edu => ({
+      "@type": "EducationalOrganization",
+      "name": edu.institution,
+      ...(edu.location ? { "address": edu.location } : {})
+    })),
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": data.title,
+      "skills": allSkills.slice(0, 25).join(', ')
+    },
+    "hasCredential": (data.certifications || []).map(cert => ({
+      "@type": "EducationalOccupationalCredential",
+      "name": cert.name,
+      "credentialCategory": "certification",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": cert.issuer
+      },
+      ...(cert.credly_url ? { "url": cert.credly_url } : {}),
+      ...(cert.credential_id ? { "identifier": cert.credential_id } : {})
+    })),
+    "knowsAbout": allSkills
+  };
+
   return `<!DOCTYPE html>
 <html lang="${lang}" data-theme="light">
 <head>
@@ -75,6 +120,11 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
   <meta property="og:url" content="${data.website}">
   <meta property="og:image" content="${data.website}/avatar.png">
   
+  <!-- Machine-Readable Standards -->
+  <link rel="alternate" type="application/json" href="${relBase}/resume.json" title="JSON Resume (v1.0.0)">
+  <link rel="alternate" type="text/markdown" href="${relBase}/cv.${lang}.md" title="Markdown Source">
+  <link rel="help" type="text/plain" href="${relBase}/llms.txt" title="LLMs AI Context">
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="${relBase}/favicon.svg">
   
@@ -83,23 +133,7 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
   
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "${data.name}",
-    "jobTitle": "${data.title}",
-    "url": "${data.website}",
-    "sameAs": [
-      "${data.linkedin}",
-      "${data.github}"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lyon",
-      "addressCountry": "France"
-    },
-    "knowsAbout": ["Kubernetes", "AWS", "Google Cloud", "DevOps", "OpenShift", "Terraform", "FinOps", "Cloud Architecture"]
-  }
+${JSON.stringify(jsonLdData, null, 2)}
   </script>
 
   <!-- Theme anti-flicker inline script -->
@@ -831,12 +865,23 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
         </p>
         <pre class="markdown-preview"><code id="markdown-code-block">${escapeHtml(rawMarkdown)}</code></pre>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-close-modal="markdown">${t.closeBtn}</button>
-        <button type="button" id="copy-markdown-btn" class="btn btn-primary">
-          <span>📋</span>
-          <span>${t.copyBtn}</span>
-        </button>
+      <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+        <div style="display: flex; gap: 0.75rem; align-items: center; font-size: 0.85rem;">
+          <a href="${relBase}/resume.json" target="_blank" style="color: var(--eu-blue); text-decoration: underline; font-weight: 600;">
+            ⚡ resume.json (JSON Resume standard)
+          </a>
+          <span>•</span>
+          <a href="${relBase}/llms.txt" target="_blank" style="color: var(--eu-blue); text-decoration: underline;">
+            🤖 llms.txt (AI Context)
+          </a>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button type="button" class="btn btn-secondary" data-close-modal="markdown">${t.closeBtn}</button>
+          <button type="button" id="copy-markdown-btn" class="btn btn-primary">
+            <span>📋</span>
+            <span>${t.copyBtn}</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -853,9 +898,17 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
           <a href="${relBase}/LICENSE.md" target="_blank" style="color: inherit; text-decoration: underline;">${t.footerLicense}</a>
         </div>
       </div>
-      <div style="display: flex; gap: 1rem; align-items: center;">
-        <a href="${relBase}/cv.${lang}.md" target="_blank" style="color: var(--eu-blue);">
-          📄 raw cv.${lang}.md
+      <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+        <a href="${relBase}/resume.json" target="_blank" style="color: var(--eu-blue); font-weight: 600;" title="JSON Resume Schema v1.0.0">
+          ⚡ resume.json
+        </a>
+        <span>•</span>
+        <a href="${relBase}/cv.${lang}.md" target="_blank" style="color: var(--eu-blue);" title="Markdown source de vérité">
+          📄 cv.${lang}.md
+        </a>
+        <span>•</span>
+        <a href="${relBase}/llms.txt" target="_blank" style="color: var(--eu-blue);" title="Fichier standard pour agents d'IA">
+          🤖 llms.txt
         </a>
         <span>•</span>
         <a href="${data.github}/whoami" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted);">
