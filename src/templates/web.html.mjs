@@ -16,7 +16,6 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
     navEdu: isEn ? 'Education' : 'Formation',
     downloadPdf: isEn ? 'Download CV (PDF)' : 'Télécharger CV (PDF)',
     copyMarkdown: isEn ? 'Copy Markdown for AI' : 'Copier Markdown pour IA',
-    availableBadge: isEn ? 'Open for strategic opportunities' : 'À l\'écoute d\'opportunités stratégiques',
     targetsTag: isEn ? 'Operational Contexts' : 'Domaines d\'Intervention',
     targetsTitle: isEn ? 'Core Practice Areas & Architectures' : 'Environnements d\'Intervention & Architectures',
     targetsSub: isEn 
@@ -164,9 +163,6 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
     <div class="container hero-grid">
       <div class="hero-avatar-wrapper">
         <img src="${relBase}/avatar.png" alt="Photo de ${data.name}" class="hero-avatar">
-        <div class="hero-status-badge" title="${t.availableBadge}">
-          <span style="font-size: 14px;">✓</span>
-        </div>
       </div>
 
       <div class="hero-content">
