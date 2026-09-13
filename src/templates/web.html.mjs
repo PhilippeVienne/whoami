@@ -51,6 +51,8 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
     expires: isEn ? 'Expires' : 'Expire',
     obtained: isEn ? 'Obtained' : 'Obtenu',
     permanent: isEn ? 'Permanent contract (CDI)' : 'CDI',
+    verifyCredly: isEn ? 'Verify on Credly' : 'Vérifier sur Credly',
+    validStatus: isEn ? 'Valid' : 'Valide',
   };
 
   const relBase = isEn ? '..' : '.';
@@ -307,20 +309,34 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
             : cert.badge === 'hashicorp' ? ICONS.terraform
             : ICONS.devoteam;
 
+          const badgeVisual = cert.badge_image
+            ? `<div class="cert-badge-img-wrapper" title="${cert.name}">
+                <img src="${relBase}/badges/${cert.badge_image}" alt="${cert.name}" class="cert-badge-img" loading="lazy">
+              </div>`
+            : `<div class="cert-badge-icon ${badgeClass}" title="${cert.issuer}">
+                ${certLogo}
+              </div>`;
+
           return `
             <div class="cert-card ${cert.highlight ? 'featured' : ''}">
               <div class="cert-header">
-                <div class="cert-badge-icon ${badgeClass}" title="${cert.issuer}">
-                  ${certLogo}
-                </div>
+                ${badgeVisual}
                 <div class="cert-info">
                   <h3 class="cert-name">${cert.name}</h3>
                   <div class="cert-issuer">${cert.issuer}</div>
                 </div>
               </div>
               <div class="cert-footer">
-                <span>${t.obtained}: <strong>${cert.date}</strong></span>
-                ${cert.expires ? `<span>${t.expires}: <strong>${cert.expires}</strong></span>` : '<span class="cert-status">✓ Valide</span>'}
+                <div class="cert-dates">
+                  <span>${t.obtained}: <strong>${cert.date}</strong></span>
+                  ${cert.expires ? `<span>${t.expires}: <strong>${cert.expires}</strong></span>` : `<span class="cert-status">✓ ${t.validStatus}</span>`}
+                </div>
+                ${cert.credly_url ? `
+                  <a href="${cert.credly_url}" target="_blank" rel="noopener noreferrer" class="cert-credly-btn" title="${t.verifyCredly}">
+                    <span>Credly</span>
+                    <span class="credly-arrow">↗</span>
+                  </a>
+                ` : ''}
               </div>
             </div>
           `;
@@ -344,8 +360,10 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
                 </div>
               </div>
               <div class="cert-footer">
-                <span>${t.obtained}: <strong>${cert.date}</strong></span>
-                <span class="cert-status">✓ Valide</span>
+                <div class="cert-dates">
+                  <span>${t.obtained}: <strong>${cert.date}</strong></span>
+                  <span class="cert-status">✓ ${t.validStatus}</span>
+                </div>
               </div>
             </div>
           `).join('')}

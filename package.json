@@ -8,6 +8,7 @@
     "start": "node scripts/dev-server.mjs",
     "build:html": "node scripts/build.mjs",
     "build:pdf": "node scripts/generate-pdf.mjs",
+    "fetch:badges": "node scripts/fetch-credly-badges.mjs",
     "build": "node scripts/build.mjs && node scripts/generate-pdf.mjs"
   },
   "keywords": [

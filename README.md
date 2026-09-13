@@ -59,6 +59,12 @@ Cette commande :
 3. Lance Google Chrome Headless pour produire `dist/Philippe_Vienne_CV_FR.pdf` et `dist/Philippe_Vienne_CV_EN.pdf`.
 4. Copie les fichiers sources Markdown bruts (`dist/cv.fr.md`, `dist/cv.en.md`) et les assets dans `dist/`.
 
+### Synchronisation des badges Credly
+```bash
+npm run fetch:badges
+```
+Télécharge et met à jour automatiquement l'ensemble des badges officiels haute résolution depuis le profil Credly de Philippe Vienne dans `public/badges/`.
+
 ---
 
 ## 📂 Structure du Répertoire
@@ -70,11 +76,13 @@ whoami/
 │   └── cv.en.md          # Source de vérité en anglais
 ├── public/
 │   ├── avatar.png        # Photo de profil de Philippe Vienne
+│   ├── badges/           # Badges de certifications officiels Credly
 │   └── favicon.svg       # Favicon personnalisé Bleu Europe / Or
 ├── scripts/
 │   ├── build.mjs         # Compilateur Markdown vers HTML
-│   ├── generate-pdf.mjs  # Générateur PDF vectoriel ATS via Chrome headless
-│   └── dev-server.mjs    # Serveur de dev avec live watch
+│   ├── dev-server.mjs    # Serveur de dev avec live watch
+│   ├── fetch-credly-badges.mjs # Récupération des badges depuis l'API Credly
+│   └── generate-pdf.mjs  # Générateur PDF vectoriel ATS via Chrome headless
 ├── src/
 │   ├── css/
 │   │   ├── style.css     # Design System Web (Bleu Europe, Dark/Light)
