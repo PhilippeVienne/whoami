@@ -458,7 +458,7 @@ img {
 .hero-badge-row {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.35rem;
   flex-wrap: wrap;
 }
 
@@ -471,14 +471,15 @@ img {
 .pill-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.25rem 0.75rem;
+  gap: 0.3rem;
+  padding: 0.18rem 0.5rem;
   border-radius: 9999px;
-  font-size: 0.75rem;
+  font-size: 0.69rem;
   font-weight: 600;
   background-color: var(--badge-bg);
   color: var(--badge-text);
   border: 1px solid var(--border-subtle);
+  white-space: nowrap;
 }
 
 .badge-mini-logo {
@@ -486,21 +487,21 @@ img {
   align-items: center;
   justify-content: center;
   width: auto;
-  min-width: 1rem;
-  height: 1rem;
+  min-width: 0.9rem;
+  height: 0.9rem;
   flex-shrink: 0;
 }
 
 .badge-mini-logo svg {
-  height: 0.95rem;
+  height: 0.85rem;
   width: auto;
-  max-width: 3.5rem;
+  max-width: 3rem;
   object-fit: contain;
   display: block;
 }
 
 .badge-insa-logo svg {
-  max-width: 4.2rem;
+  max-width: 2.6rem;
 }
 
 .pill-badge-gold {
@@ -788,11 +789,11 @@ img {
    ========================================================================== */
 .certs-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 992px) {
   .certs-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -850,17 +851,22 @@ img {
 .cert-card.featured {
   border: 2px solid var(--eu-gold);
   background: linear-gradient(180deg, rgba(255, 204, 0, 0.04) 0%, var(--bg-secondary) 100%);
+  box-shadow: 0 4px 18px rgba(255, 204, 0, 0.12);
 }
 
 .cert-card.featured-claude {
   border: 2px solid #d97757;
   background: linear-gradient(180deg, rgba(217, 119, 87, 0.07) 0%, var(--bg-secondary) 100%);
-  box-shadow: 0 4px 18px rgba(217, 119, 87, 0.15);
+  box-shadow: 0 4px 18px rgba(217, 119, 87, 0.14);
+}
+
+[data-theme="dark"] .cert-card.featured {
+  box-shadow: 0 4px 20px rgba(255, 204, 0, 0.18);
 }
 
 [data-theme="dark"] .cert-card.featured-claude {
   background: linear-gradient(180deg, rgba(217, 119, 87, 0.12) 0%, var(--bg-secondary) 100%);
-  box-shadow: 0 4px 22px rgba(217, 119, 87, 0.22);
+  box-shadow: 0 4px 20px rgba(217, 119, 87, 0.2);
 }
 
 .cert-card:hover {

@@ -22,10 +22,10 @@ export function renderWebPage({ data, rawMarkdown, lang = 'fr', basePath = '' })
       ? 'Architectural authority, pragmatic technical co-founder agility, and hands-on multi-cloud engineering for critical systems.'
       : 'Autorité architecturale, agilité de co-fondateur tech et ingénierie multi-cloud de pointe pour systèmes critiques.',
     certsTag: isEn ? 'Verified Credentials' : 'Certifications Validées',
-    certsTitle: isEn ? 'Cloud & Architecture Certifications' : 'Certifications Officielles Cloud & DevOps',
+    certsTitle: isEn ? 'Cloud, AI & Architecture Certifications' : 'Certifications Officielles Cloud, IA & DevOps',
     certsSub: isEn
-      ? 'Recognized multi-cloud expertise across AWS, Google Cloud, and HashiCorp.'
-      : 'Expertise multi-cloud reconnue et certifiée par les éditeurs de référence (AWS, Google Cloud, HashiCorp).',
+      ? 'Recognized multi-cloud & AI expertise across AWS, Anthropic, Google Cloud, and HashiCorp.'
+      : 'Expertise reconnue et certifiée par les éditeurs de référence (AWS, Anthropic, Google Cloud, HashiCorp).',
     filterAll: isEn ? 'All Experiences' : 'Toutes les expériences',
     filterCloud: isEn ? 'Cloud & Platforms' : 'Cloud & Plateformes',
     filterCto: isEn ? 'Startup & Co-Founder' : 'Startup & Co-fondateur',
@@ -364,7 +364,7 @@ ${JSON.stringify(jsonLdData, null, 2)}
           ].filter(Boolean).join(' ');
 
           const highDemandTag = isClaude
-            ? `<span class="cert-badge-tag-claude">🔥 ${isEn ? 'High Demand • GenAI' : 'Forte Demande • GenAI'}</span>`
+            ? `<span class="cert-badge-tag-claude">🔥 GenAI</span>`
             : '';
 
           return `
