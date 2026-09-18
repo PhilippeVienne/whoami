@@ -38,9 +38,9 @@ metrics:
   - value: "30"
     label: "Cloud Clients"
     detail: "Directly managed infrastructure portfolio (€330k budget at Skyloud)"
-  - value: "9x"
+  - value: "10x"
     label: "Certifications"
-    detail: "AWS Solutions Architect Pro, GCP Associate, Terraform Associate, etc."
+    detail: "AWS Solutions Architect Pro, Claude Developer, GCP Associate, Terraform, etc."
   - value: "5 Years"
     label: "Startup Co-Founder"
     detail: "Smartfire startup: technical pillar of 2 founders, built SaaS product 0 to 1"
@@ -53,6 +53,15 @@ certifications:
     badge: "aws-pro"
     badge_image: "aws-solutions-architect-professional.png"
     credly_url: "https://www.credly.com/badges/14eabfb5-f2a6-4b5b-9ee2-d75afe8f6fae/public_url"
+    highlight: true
+    verified: true
+  - name: "Claude Certified Developer – Foundations"
+    issuer: "Anthropic"
+    date: "09/2026"
+    expires: "09/2027"
+    badge: "anthropic"
+    badge_image: "claude-certified-developer-foundations.png"
+    credly_url: "https://www.credly.com/badges/be323437-24ed-4a02-b1bf-933c265d39da/public_url"
     highlight: true
     verified: true
   - name: "Google Cloud Certified – Associate Cloud Engineer"
@@ -172,7 +181,7 @@ Specialized in the design, automation, and operation of highly resilient, secure
 - **FinTech & Banking Analytics** (ActiveViam Singapore): CI/CD architecture for distributed in-memory OLAP database engines.
 - **Scale, E-commerce & Startup R&D** (Skyloud, Smartfire): 100+ Kubernetes clusters operated, +300% performance gain, -15% cloud spend, building a SaaS product 0 to 1, and in-browser VSCode repackaging.
 
-Multi-certified: AWS (Solutions Architect Professional, Developer, CloudOps, AI Practitioner), Google Cloud (Associate Cloud Engineer), and HashiCorp (Terraform Associate).
+Multi-certified: AWS (Solutions Architect Professional, Developer, CloudOps, AI Practitioner), Anthropic (Claude Certified Developer), Google Cloud (Associate Cloud Engineer), and HashiCorp (Terraform Associate).
 
 ---
 

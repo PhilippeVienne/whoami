@@ -209,6 +209,9 @@ ${JSON.stringify(jsonLdData, null, 2)}
           <span class="pill-badge pill-badge-gold">
             <span class="badge-mini-logo">${ICONS.aws}</span> AWS Solutions Architect Pro
           </span>
+          <span class="pill-badge pill-badge-claude">
+            <span class="badge-mini-logo">${ICONS.claude}</span> Claude Certified Developer
+          </span>
           <span class="pill-badge">
             <span class="badge-mini-logo">${ICONS.gcp}</span> Google Cloud Associate
           </span>
@@ -332,15 +335,18 @@ ${JSON.stringify(jsonLdData, null, 2)}
 
       <div class="certs-grid">
         ${(data.certifications || []).filter(c => c.badge !== 'devoteam').map(cert => {
+          const isClaude = cert.badge === 'anthropic' || cert.badge === 'claude';
           const badgeClass = cert.badge === 'aws-pro' ? 'cert-badge-aws-pro'
             : cert.badge === 'aws' ? 'cert-badge-aws'
             : cert.badge === 'gcp' ? 'cert-badge-gcp'
             : cert.badge === 'hashicorp' ? 'cert-badge-hashicorp'
+            : isClaude ? 'cert-badge-anthropic'
             : 'cert-badge-devoteam';
 
           const certLogo = (cert.badge === 'aws-pro' || cert.badge === 'aws') ? ICONS.aws
             : cert.badge === 'gcp' ? ICONS.gcp
             : cert.badge === 'hashicorp' ? ICONS.terraform
+            : isClaude ? ICONS.claude
             : ICONS.devoteam;
 
           const badgeVisual = cert.badge_image
@@ -351,12 +357,25 @@ ${JSON.stringify(jsonLdData, null, 2)}
                 ${certLogo}
               </div>`;
 
+          const cardClasses = [
+            'cert-card',
+            cert.highlight ? 'featured' : '',
+            isClaude ? 'featured-claude' : ''
+          ].filter(Boolean).join(' ');
+
+          const highDemandTag = isClaude
+            ? `<span class="cert-badge-tag-claude">🔥 ${isEn ? 'High Demand • GenAI' : 'Forte Demande • GenAI'}</span>`
+            : '';
+
           return `
-            <div class="cert-card ${cert.highlight ? 'featured' : ''}">
+            <div class="${cardClasses}">
               <div class="cert-header">
                 ${badgeVisual}
                 <div class="cert-info">
-                  <h3 class="cert-name">${cert.name}</h3>
+                  <div class="cert-info-top">
+                    <h3 class="cert-name">${cert.name}</h3>
+                    ${highDemandTag}
+                  </div>
                   <div class="cert-issuer">${cert.issuer}</div>
                 </div>
               </div>

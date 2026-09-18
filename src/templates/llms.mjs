@@ -31,6 +31,7 @@ export function renderLlmsTxt({ data, frRaw, enRaw }) {
 
 ## Official Certifications & Verified Accreditations
 - [AWS Certified Solutions Architect – Professional](https://www.credly.com/badges/14eabfb5-f2a6-4b5b-9ee2-d75afe8f6fae/public_url) (Amazon Web Services)
+- [Claude Certified Developer – Foundations](https://www.credly.com/badges/be323437-24ed-4a02-b1bf-933c265d39da/public_url) (Anthropic)
 - [Google Cloud Certified – Associate Cloud Engineer](https://www.credly.com/badges/736ef7d0-5577-44eb-a1ca-ea4484aba404/public_url) (Google Cloud)
 - [HashiCorp Certified: Terraform Associate 003](https://www.credly.com/badges/51e949dd-10f6-4198-b8f9-6d27b6066f28/public_url) (HashiCorp)
 - [AWS Certified Solutions Architect – Associate](https://www.credly.com/badges/35282ec4-14d5-4124-a7c8-7a42f434d639/public_url) (AWS)

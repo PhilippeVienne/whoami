@@ -32,18 +32,23 @@ export function renderAtsPage({ data, lang = 'fr', inlinedCss = '' }) {
 
   <!-- Header ATS -->
   <header class="ats-header h-card">
-    <h1 class="ats-name p-name">${data.name}</h1>
-    <div class="ats-title p-job-title">${data.title}</div>
-    <div class="ats-contact-bar">
-      <span class="p-locality">${data.location}</span>
-      <span>•</span>
-      <span><a class="u-email" href="mailto:${data.email}">${data.email}</a></span>
-      <span>•</span>
-      <span><a class="u-url" href="${data.website}">${data.website.replace('https://', '')}</a></span>
-      <span>•</span>
-      <span><a class="u-url" href="${data.linkedin}">linkedin.com/in/pvienne</a></span>
-      <span>•</span>
-      <span><a class="u-url" href="${data.github}">github.com/PhilippeVienne</a></span>
+    <div class="ats-header-main">
+      <h1 class="ats-name p-name">${data.name}</h1>
+      <div class="ats-title p-job-title">${data.title}</div>
+      <div class="ats-contact-bar">
+        <span class="p-locality">${data.location}</span>
+        <span>•</span>
+        <span><a class="u-email" href="mailto:${data.email}">${data.email}</a></span>
+        <span>•</span>
+        <span><a class="u-url" href="${data.website}">${data.website.replace('https://', '')}</a></span>
+        <span>•</span>
+        <span><a class="u-url" href="${data.linkedin}">linkedin.com/in/pvienne</a></span>
+        <span>•</span>
+        <span><a class="u-url" href="${data.github}">github.com/PhilippeVienne</a></span>
+      </div>
+    </div>
+    <div class="ats-photo-wrapper">
+      <img src="avatar.png" alt="${data.name}" class="ats-photo u-photo">
     </div>
   </header>
 
@@ -52,8 +57,8 @@ export function renderAtsPage({ data, lang = 'fr', inlinedCss = '' }) {
     <h2 class="ats-section-title">${t.titleSummary}</h2>
     <p class="ats-summary p-summary">
       ${isEn
-        ? 'Accomplished Cloud & DevOps Solutions Architect and former Startup Technical Co-Founder (CTO) with <strong>15 years of software engineering and cloud infrastructure expertise</strong> (M.Sc. in Engineering, INSA Lyon). Specialist in high-availability, fault-tolerant multi-cloud environments (AWS, GCP, Azure, OpenShift, Kubernetes, Terraform). Proven track record delivering mission-critical platforms across heavily regulated industries (Nuclear at EDF, Aviation at Air France, Banking/FinTech at ActiveViam Singapore, and French Sovereign Cloud S3NS). Multi-certified AWS (Solutions Architect Professional, Developer, CloudOps, AI Practitioner), Google Cloud (Associate Cloud Engineer), and HashiCorp (Terraform Associate).'
-        : 'Architecte Cloud & DevOps chevronné et ancien co-fondateur technique (CTO) de startup, fort de <strong>15 ans d\'expérience en ingénierie logicielle et infrastructure cloud</strong> (Diplômé Ingénieur INSA Lyon). Spécialiste de la résilience, de la haute disponibilité et de l\'automatisation multi-cloud (AWS, GCP, Azure, OpenShift, Kubernetes, Terraform). Track-record confirmé dans des secteurs hautement critiques et réglementés : nucléaire (EDF), secteur aérien (Air France), FinTech bancaire (ActiveViam à Singapour) et cloud souverain (S3NS). Multi-certifié AWS (Solutions Architect Professional, Developer, CloudOps, AI Practitioner), Google Cloud (Associate Cloud Engineer) et HashiCorp (Terraform Associate).'}
+        ? 'Accomplished Cloud & DevOps Solutions Architect and former Startup Technical Co-Founder (CTO) with <strong>15 years of software engineering and cloud infrastructure expertise</strong> (M.Sc. in Engineering, INSA Lyon). Specialist in high-availability, fault-tolerant multi-cloud environments (AWS, GCP, Azure, OpenShift, Kubernetes, Terraform). Proven track record delivering mission-critical platforms across heavily regulated industries (Nuclear at EDF, Aviation at Air France, Banking/FinTech at ActiveViam Singapore, and French Sovereign Cloud S3NS). Multi-certified AWS (Solutions Architect Professional, Developer, CloudOps, AI Practitioner), Anthropic (Claude Certified Developer), Google Cloud (Associate Cloud Engineer), and HashiCorp (Terraform Associate).'
+        : 'Architecte Cloud & DevOps chevronné et ancien co-fondateur technique (CTO) de startup, fort de <strong>15 ans d\'expérience en ingénierie logicielle et infrastructure cloud</strong> (Diplômé Ingénieur INSA Lyon). Spécialiste de la résilience, de la haute disponibilité et de l\'automatisation multi-cloud (AWS, GCP, Azure, OpenShift, Kubernetes, Terraform). Track-record confirmé dans des secteurs hautement critiques et réglementés : nucléaire (EDF), secteur aérien (Air France), FinTech bancaire (ActiveViam à Singapour) et cloud souverain (S3NS). Multi-certifié AWS (Solutions Architect Professional, Developer, CloudOps, AI Practitioner), Anthropic (Claude Certified Developer), Google Cloud (Associate Cloud Engineer) et HashiCorp (Terraform Associate).'}
     </p>
   </section>
 
@@ -62,7 +67,7 @@ export function renderAtsPage({ data, lang = 'fr', inlinedCss = '' }) {
     <h2 class="ats-section-title">${t.titleCerts}</h2>
     <div class="ats-certs-grid">
       ${(data.certifications || []).map(c => `
-        <div class="ats-cert-item">
+        <div class="ats-cert-item ${c.highlight || c.badge === 'anthropic' ? 'ats-cert-featured' : ''}">
           • <strong>${c.name}</strong> — ${c.issuer} (${c.date}${c.expires ? ` · ${t.expires} ${c.expires}` : ''})
         </div>
       `).join('')}

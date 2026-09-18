@@ -40,6 +40,27 @@ body {
   border-bottom: 2pt solid #003399;
   padding-bottom: 5pt;
   margin-bottom: 8pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12pt;
+}
+
+.ats-header-main {
+  flex: 1;
+}
+
+.ats-photo-wrapper {
+  flex-shrink: 0;
+}
+
+.ats-photo {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5pt solid #003399;
+  display: block;
 }
 
 .ats-name {
@@ -195,4 +216,8 @@ body {
 
 .ats-cert-item strong {
   color: #111827;
+}
+
+.ats-cert-featured strong {
+  color: #003399;
 }

@@ -8,6 +8,7 @@ const rootDir = path.resolve(__dirname, '..');
 const badgesDir = path.join(rootDir, 'public', 'badges');
 
 const BADGE_FILENAME_MAP = {
+  'be323437-24ed-4a02-b1bf-933c265d39da': 'claude-certified-developer-foundations.png',
   '14eabfb5-f2a6-4b5b-9ee2-d75afe8f6fae': 'aws-solutions-architect-professional.png',
   '736ef7d0-5577-44eb-a1ca-ea4484aba404': 'gcp-associate-cloud-engineer.png',
   '51e949dd-10f6-4198-b8f9-6d27b6066f28': 'hashicorp-terraform-associate.png',
