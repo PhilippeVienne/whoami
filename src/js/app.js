@@ -415,7 +415,7 @@ Commandes suggérées : <span class="term-blue">whoami</span>, <span class="term
 <span class="term-muted">Expérience :</span> 15 ans en ingénierie logicielle et exploitation d'infrastructures critiques
 <span class="term-muted">Diplôme :</span> Diplôme d'Ingénieur INSA Lyon (Télécommunications & Systèmes Distribués)
 <span class="term-muted">Secteurs :</span> Nucléaire régulé (EDF), Aérien (Air France), FinTech OLAP (Singapour), Cloud Souverain (S3NS)
-<span class="term-muted">Chiffres clés :</span> 100+ clusters K8s, 30 clients MSP (budget 330 k€), -15% FinOps, +300% performance
+<span class="term-muted">Chiffres clés :</span> 100+ clusters K8s, 30 clients MSP, -15% FinOps, +300% performance
 <span class="term-muted">Statut actuel :</span> <span class="term-green">✓ Disponible pour rôles Senior / Lead / Staff Cloud Architect</span>
 `,
 
@@ -435,7 +435,7 @@ Commandes suggérées : <span class="term-blue">whoami</span>, <span class="term
 <span class="term-blue">production</span>      philippe-brain-master-0           1/1     <span class="term-green">Running</span>            0          15y
 <span class="term-blue">infra-aws</span>       aws-solutions-architect-pro-0     1/1     <span class="term-green">Running</span>            0          2y
 <span class="term-blue">genai-claude</span>    claude-certified-developer-84b    1/1     <span class="term-claude">Running (Hot 🔥)</span>   0          1d
-<span class="term-blue">finops</span>          cost-reducer-330k-eur             1/1     <span class="term-green">Running</span>            0          3y
+<span class="term-blue">finops</span>          cost-reducer-finops-opt           1/1     <span class="term-green">Running</span>            0          3y
 <span class="term-blue">beverage</span>        espresso-machine-crx7             1/1     <span class="term-green">Running</span>            1420       15y
 <span class="term-blue">psychology</span>      impostor-syndrome-daemon          0/1     <span class="term-red">CrashLoopBackOff</span>   42         15y
 <span class="term-blue">compliance</span>      secnumcloud-s3ns-guard-99z        1/1     <span class="term-green">Running</span>            0          1y

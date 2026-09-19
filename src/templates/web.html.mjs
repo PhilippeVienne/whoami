@@ -596,8 +596,8 @@ ${JSON.stringify(jsonLdData, null, 2)}
 
           <p style="color: var(--text-secondary); margin-bottom: 0.75rem;">
             ${isEn
-              ? 'Managed cloud infrastructure portfolio across 30 clients representing an annual budget of €330k.'
-              : 'Pilotage technique et infogérance d\'un portefeuille de 30 clients cloud pour un budget annuel de 330 k€.'}
+              ? 'Managed and optimized cloud infrastructure portfolio across 30 enterprise clients.'
+              : 'Pilotage technique, infogérance et optimisation d\'un portefeuille de 30 clients cloud.'}
           </p>
 
           <ul class="exp-bullets">

@@ -32,7 +32,7 @@ export function renderJsonResume({ data, lang = 'fr' }) {
       highlights: [
         "Architected resilient multi-zone and multi-cloud Kubernetes clusters with +300% application performance improvement.",
         "Implemented automated Infrastructure as Code (IaC) with HashiCorp Terraform for automated disaster recovery.",
-        "Delivered FinOps cost reduction (-15% operational spend) across 330 k€ cloud infrastructure portfolio."
+        "Delivered FinOps cost reduction (-15% operational spend) across cloud infrastructure portfolio."
       ]
     },
     {
@@ -114,7 +114,7 @@ export function renderJsonResume({ data, lang = 'fr' }) {
       url: "https://skyloud.com",
       startDate: "2023-11-01",
       endDate: "2025-09-01",
-      summary: "Conseil en architecture cloud, infogérance et optimisation FinOps d'un portefeuille de 30 clients (330 k€ de budget cloud).",
+      summary: "Conseil en architecture cloud, infogérance et optimisation FinOps d'un portefeuille de 30 clients cloud.",
       highlights: [
         "Conception d'architectures Kubernetes résilientes multi-cloud et multi-zones avec +300% de gains de performance applicative.",
         "Automatisation intégrale Infrastructure as Code (IaC) via HashiCorp Terraform.",

@@ -18,7 +18,7 @@ targets:
     tags: ["Multi-Cloud", "EKS & GKE", "GenAI & LLMOps", "Landing Zones", "Well-Architected"]
   - id: "consulting-msp"
     title: "Consulting Firms & MSPs"
-    desc: "Pragmatic consulting culture: technical co-founder product vision, cloud portfolio operations (30 clients, €330k budget at Skyloud), and FinOps (-15%)."
+    desc: "Pragmatic consulting culture: technical co-founder product vision, multi-cloud portfolio operations (30 clients at Skyloud), and FinOps (-15%)."
     tags: ["Advisory", "FinOps", "Multi-Cloud", "Presales", "Hands-on"]
   - id: "banking-regulated"
     title: "Banking & Regulated Sectors"
@@ -37,7 +37,7 @@ metrics:
     detail: "Designed, secured, and operated in multi-cloud production"
   - value: "30"
     label: "Cloud Clients"
-    detail: "Directly managed infrastructure portfolio (€330k budget at Skyloud)"
+    detail: "Directly managed multi-cloud infrastructure portfolio (Skyloud)"
   - value: "10x"
     label: "Certifications"
     detail: "AWS Solutions Architect Pro, Claude Developer, GCP Associate, Terraform, etc."
@@ -227,7 +227,7 @@ Multi-certified: AWS (Solutions Architect Professional, Developer, CloudOps, AI 
 
 ### Skyloud — Cloud & Kubernetes Architect
 **Duration:** November 2023 - September 2025 (1 year 11 months) | **Location:** Lyon, France  
-*Managed and optimized cloud infrastructures for 30 clients representing an annual managed infrastructure budget of €330k.*
+*Managed and optimized cloud infrastructures for a portfolio of 30 enterprise clients.*
 
 - **Resilience & High Availability:** Designed and operated fault-tolerant, multi-zone, and multi-cloud Kubernetes architectures guaranteeing enterprise SLAs.
 - **Infrastructure as Code (IaC):** Automated full lifecycle provisioning with HashiCorp Terraform, preventing configuration drift and enabling zero-touch disaster recovery.

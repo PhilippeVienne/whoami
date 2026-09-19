@@ -18,7 +18,7 @@ targets:
     tags: ["Multi-Cloud", "EKS & GKE", "GenAI & LLMOps", "Landing Zones", "Well-Architected"]
   - id: "consulting-msp"
     title: "Sociétés de Conseil & MSP"
-    desc: "Culture du conseil et posture pragmatique : vision produit de co-fondateur tech, gestion de portefeuille d'infrastructures (30 clients, 330 k€ chez Skyloud) et FinOps (-15%)."
+    desc: "Culture du conseil et posture pragmatique : vision produit de co-fondateur tech, gestion de portefeuille d'infrastructures (30 clients chez Skyloud) et FinOps (-15%)."
     tags: ["Conseil", "FinOps", "Multi-Cloud", "Avant-vente", "Hands-on"]
   - id: "banking-regulated"
     title: "Banques & Secteurs Réglementés"
@@ -37,7 +37,7 @@ metrics:
     detail: "Déployés, sécurisés et managés en production multi-cloud"
   - value: "30"
     label: "Clients Cloud"
-    detail: "Portefeuille d'infrastructures géré (budget 330 k€ chez Skyloud)"
+    detail: "Portefeuille d'infrastructures géré (Skyloud)"
   - value: "10x"
     label: "Certifications"
     detail: "AWS Solutions Architect Pro, Claude Developer, GCP Associate, Terraform, etc."
@@ -227,7 +227,7 @@ Praticien certifié AWS (Solutions Architect Professional, Developer, CloudOps, 
 
 ### Skyloud — Architecte Cloud & Kubernetes
 **Période :** Novembre 2023 - Septembre 2025 (1 an 11 mois) | **Lieu :** Lyon, France  
-*Accompagnement de 30 clients cloud (budget infrastructure géré de 330 k€) dans la fiabilisation, la mise à l'échelle et l'optimisation financière de leurs plateformes.*
+*Accompagnement d'un portefeuille de 30 clients cloud dans la fiabilisation, la mise à l'échelle et l'optimisation financière de leurs plateformes.*
 
 - **Résilience & Haute Disponibilité :** Conception et déploiement d'architectures Kubernetes résilientes multi-zones et multi-cloud pour garantir un SLA optimal face aux pannes.
 - **Automatisation & IaC :** Industrialisation complète des infrastructures via HashiCorp Terraform pour éliminer les dérives de configuration et automatiser le disaster recovery.

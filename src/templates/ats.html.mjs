@@ -141,8 +141,8 @@ export function renderAtsPage({ data, lang = 'fr', inlinedCss = '' }) {
         </li>
         <li>
           ${isEn
-            ? 'Deployed, orchestrated, and operated <strong>100+ Kubernetes clusters</strong> in production across 30 enterprise clients (€330k infrastructure budget).'
-            : 'Gestion et infogérance de <strong>plus de 100 clusters Kubernetes</strong> en production pour un portefeuille de 30 clients cloud (budget 330 k€).'}
+            ? 'Deployed, orchestrated, and operated <strong>100+ Kubernetes clusters</strong> in production across 30 enterprise clients.'
+            : 'Gestion et infogérance de <strong>plus de 100 clusters Kubernetes</strong> en production pour un portefeuille de 30 clients cloud.'}
         </li>
       </ul>
       <div class="ats-tech-line">
